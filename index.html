@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html><head>
+<script src="jquery-1.10.1.min.js">
+</script>
+<script src="jquery.color-2.1.2.js"></script>
+<script> 
+
+$(document).ready(function(){
+$("#msHead").click(function(){
+$('#msHead').animate({color:'white'}, 'fast');
+$("#msBody").animate({height:'toggle'}, 'slow');
+$('#msHead').animate({ color:'#000000'}, 'fast');
+});
+
+$("#asHead").click(function(){
+$('#asHead').animate({color:'white'}, 'fast');
+$("#asBody").animate({height:'toggle'}, 'slow');
+$('#asHead').animate({ color:'#000000'}, 'fast');
+});
+
+$("#psHead").click(function(){
+$('#psHead').animate({color:'white'}, 'fast');
+$("#psBody").animate({height:'toggle'}, 'slow');
+$('#psHead').animate({ color:'#000000'}, 'fast');
+});
+$("#coopHead").click(function(){
+$("#coopBody").toggle('slow');
+});
+$("#graffitiHead").click(function(){
+$("#graffitiBody").toggle('slow');
+});
+$("#picassoHead").click(function(){
+$("#picassoBody").toggle('slow');
+});
+$("#tribHead").click(function(){
+$("#tribBody").toggle('slow');
+});
+
+$("#lsHead").click(function(){
+$('#lsHead').animate({color:'whitehege'}, 'fast');
+$("#lsBody").animate({height:'toggle'}, 'slow');
+$('#lsHead').animate({ color:'#000000'}, 'fast');
+});
+
+$("#msHead").hover(function(){
+$("#msHead").css("color","#FFCC00");
+},function(){
+$("#msHead").css("color","#000000");
+});
+$("#asHead").hover(function(){
+$("#asHead").css("color","#FFCC00");
+},function(){
+$("#asHead").css("color","#000000");
+});
+$("#psHead").hover(function(){
+$("#psHead").css("color","#FFCC00");
+},function(){
+$("#psHead").css("color","#000000");
+});
+$("#lsHead").hover(function(){
+$("#lsHead").css("color","#FFCC00");
+},function(){
+$("#lsHead").css("color","#000000");
+});
+
+});
+</script>
+
+<title>Ginny Huang's Homepage</title>
+<link rel="stylesheet" type="text/css" href="Orz_zai.css">
+<link rel="shortcut icon" href="./pics/hp.png">
+</head><body>
+
+<!-- ###### Header ###### -->
+<div id="head">
+<h1>Ginny Huang</h1>
+<p>is ready for the wild.</p>
+<p style="color: gold; font-weight: bold; text-decoration: underline;">(&gt;.&lt;) (&gt;.&lt;) (&gt;.&lt;) (&gt;.&lt;) (&gt;.&lt;) 
+( ^ v ^ ) (&gt;.&lt;) (&gt;.&lt;) (&gt;.&lt;) (&gt;.&lt;) (&gt;.&lt;) </p>
+</div>
+<!-- ###### General information ###### -->
+<div id="mainSection" style="overflow: auto;">
+<div id="msHead"><h2>Generally...</h2></div>
+<div id="msBody">
+<div id="middle">
+<p><img src="./pics/ginny.jpg" alt="Ginny Huang">
+<br/>
+<span class='small'>President Ruscio handed me my diploma on May 22, 2014!</span>
+</p>
+</div>
+
+<div id="info">
+<p><span class="bold">Jin (Ginny) Huang</span>
+<br/> <span class="bold">Computer Science, Washington and Lee'14</span>
+<br/> <span class="bold">Address:</span> 106 Lee Avenue, Lexington, VA 24450
+<br/><span class="bold">Phone:</span> (540)817-7521
+<br/><span class="bold">E-mail:</span> huangj14@mail.wlu.edu</p>
+<p><a href="https://www.facebook.com/orz.zai"><img src="./pics/fb.png" width="32" alt="Facebook"></a>
+<a href="https://twitter.com/Orz_zai"><img src="./pics/Twitter_icon.png" width="32" alt="Twitter"></a>
+<a href="http://www.linkedin.com/in/jh92710"><img src="./pics/linkedin.png" width="32" alt="LinkedIn"></a>
+<a href="http://www.flickr.com/photos/orz_zai/"><img src="./pics/flickr.png" width="32" alt="Flickr"></a>
+</p>
+<p>Hi, I am Ginny Huang and I <del>am currently a senior at</del> just graduated (hard to believe!) from Washington and Lee.</p>
+<p>Please click the headings to see relevant content. You can also read my <u><a href="resume.pdf">resume.</a></u></p>
+<p>This site is always under construction.</p>
+<p>Enjoy!</p>
+</div>
+</div>
+</div>
+<div class="division"><br/></div>
+<!-- ######## Projects ########-->
+<div id="projSection">
+<div id="psHead"><h2>Projects</h2></div>
+<div id="psBody">
+<ul>
+<li><h3 id="coopHead">Co-op Ready</h3>
+<p style="float:right;">May 2014</p>
+<div id="coopBody">
+<p>Our iPhone application (currently still a demo), Co-op Ready, is a tool for the W&L community to order food from Cafe 77
+remotely. The purpose is to benefit the students/staff that have very limited amount of lunch time,
+so they do not need to waste time sitting in the cafe and waiting for their food.</p>
+<p>
+<img src="./pics/coop1.png" width="200"> <img src="./pics/coop2.png" width="200"> <img src="./pics/coop3.png" width="200"> <img src="./pics/coop4.png" width="200">
+</p>
+</div></li>
+<li><h3 id="graffitiHead">Ancient Graffiti</h3>
+<p style="float:right;">May 2013</p>
+<div id="graffitiBody"><p>Welcome to <a href="http://ancientgraffiti.wlu.edu/">Ancient Graffiti</a>!
+This is a website that provides a search engine for locating and studying graffiti
+of the early Roman empire from the cities of Pompeii and Herculaneum. Our <a href="http://servo.cs.wlu.edu/Graffiti/search">search engine</a>
+allows three different types of searches.</p>
+<ul>
+<li>You can search for graffiti by location, selecting either the pull-down menu, or by clicking on the map, or</li>
+<li>You can search specifically for graffiti drawings by choosing the class of drawing that interests you, or</li>
+<li>You can search for a specific word or phrase and find where it occurs within the ancient city.</li>
+</ul>
+</div></li>
+<li><h3 id="picassoHead">Picasso Project</h3>
+<p style="float:right;">December 2012</p>
+<p id="picassoBody">
+To be updated...
+</p></li>
+<li><h3 id="tribHead">Zeckendorf's Theorem and Tribonacci Numbers</h3>
+<p style="float:right;">June-August 2012</p>
+<div id="tribBody">
+<p>This summer, with my friend Cathy Wang and professor Gregory Dresden, I did a research on Zeckendorf's Theorem,
+Tiling proofs and 3-bonacci numbers, based on the book <em>Proofs that really Count</em> by Benjamin and Quinn.</p>
+</p>
+<p>For more information, please refer to this poster that I've presented to the Maths Department.
+<br/>
+<img src="./pics/poster.jpg" alt="poster" style="width:100%;">
+<br/><br/></p>
+</ul>
+</div>
+</div>
+<div class="division"><br/></div>
+<!-- ###### About ######-->
+<div id="aboutSection">
+<div id="asHead"><h2>More about Me</h2></div>
+<div id="asBody">
+<p>I was born on a summer day in 1992 in Shenzhen, China. It was a small but
+dense coastal city; also, at least 80% of its population are immigrants from
+other areas of China. I attended Shenzhen Foreign Languages School for middle
+school for six years, and they were the most golden years in life.
+<br/><img src="./pics/lomo.jpg" alt="SFLS" class="tooBig"><br/><span class="small">Shenzhen Foreign Languages School</span><br/></p>
+<p>In September 2010, I came across the Pacific to Washington and Lee to grow up
+and gain some real adventure. I declared double major in Computer Science and 
+Mathematics in my sophomore year, despite that before I come, my goal was to get
+through college with no maths class at all.
+<br/><img src="./pics/FallInW&L.jpg" alt="W&L" class="tooBig"><br/><span class="small">Washington and Lee University</span><br/></p>
+<p>In my spare time, my greatest hobby of all is solo-backpacking. I've been 
+in and around USA, Canada, Europe and parts of Central America on my own with 
+all the one-week breaks. Maybe I will be a professional backpacking advisor 
+in the future. I'm also interested in photography. I take photos with my precious 
+Nikon D700 while I travel, and I hope you will checkout my Flickr photostream.
+<br/><img src="./pics/ng2.jpg" alt="travel" class="tooBig"><br/><span class="small">Niagara Falls, February 2012</span><br/></p>
+<p>Last but not least, it's a sin if I don't mention that I'm an extremely diehard Potterhead. From 2000 to the end.
+<br/><img src="./pics/trio2.jpg" alt="travel"><br/></p>
+</div>
+</div>
+<div class="division"><br/></div>
+<!-- ######## Links ######## -->
+<div id="linkSection">
+<div id="lsHead"><h2>Links</h2></div>
+<div id="lsBody">
+<p>A bunch of my favorite links...You can click on them as well!</p>
+<ul>
+<li><strong>Academic:</strong>(hmm these were for my web dev class)<ul>
+<li><a href="http://cs.wlu.edu/~huangj/cs335/">My CSCI 335 page--more links here!</a></li>
+<li><a href="http://www.cs.wlu.edu/~sprenkle/cs335/index.php">CSCI 335 homepage</a></li>
+<li><a href="http://servo.cs.wlu.edu/dokuwiki/doku.php/courses/cs335/spring2013/home">CSCI 335 Wiki page</a></li>
+</ul></li>
+<li><strong>Useful links:</strong><ul>
+<li><a href="http://www.careercup.com/">Career Cup</a></li>
+</ul></li>
+<li><strong>Myself, dialectic:</strong><ul>
+<li><a href="http://www.flickr.com/photos/orz_zai/">Orz_zai's Flickr: My Journey with a Nikon D700</a></li>
+<li><a href="http://blog.163.com/orz_zai/">Personal Journals</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="division"><br/></div>
+<!-- ####### Foot ####### -->
+<div id="footer">
+<br/>
+<hr/>
+<p>
+<cite>Page by Ginny Huang on 28 June, 2013. Last updated on 6 June, 2014.</cite>
+</p>
+</div>
+</body></html>
