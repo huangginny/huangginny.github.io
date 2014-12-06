@@ -17,23 +17,12 @@ body {
 
 /* HEADER */
 #head {
-	top: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
 	text-align: center;
 	padding-bottom: 20px;
 	font-family: "Garamond", "Georgia", serif;
-	position: fixed;
-	background-color: white;
 }
 
 /* MAIN SECTION */
-#mainSection {
-	overflow: auto;
-	margin-top: 150px;
-}
-
 #middle {
 	width: 45%;
 	margin-right: auto;
