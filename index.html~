@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html><head>
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="./lib/jquery-1.10.1.min.js"></script>
+<script src="./lib/jquery.color-2.1.2.js"></script>
 <script src="site.js"></script>
 
 <title>Ginny Huang's Homepage</title>
