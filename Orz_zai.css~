@@ -60,14 +60,6 @@ body {
 	font-family: "arial", "helvetica", sans-serif;
 }
 
-.fa {
-	color: grey;
-}
-
-.fa:hover {
-	color: gold;
-}
-
 #info span.bold {
 	font-weight: bold;
 }

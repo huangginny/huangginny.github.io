@@ -5,7 +5,6 @@
 <script src="site.js"></script>
 
 <title>Ginny Huang's Homepage</title>
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="Orz_zai.css">
 <link rel="shortcut icon" href="./pics/hp.png">
 </head><body>
@@ -34,11 +33,10 @@
 <br/> <span class="bold">Address:</span> 106 Lee Avenue, Lexington, VA 24450
 <br/><span class="bold">Phone:</span> (540)817-7521
 <br/><span class="bold">E-mail:</span> huangj14@mail.wlu.edu</p>
-<p><a href="https://www.facebook.com/orz.zai"><i class="fa fa-facebook-square fa-2x"></i></a>
-<a href="https://twitter.com/Orz_zai"><i class="fa fa-twitter fa-2x"></i></a>
-<a href="http://www.linkedin.com/in/jh92710"><i class="fa fa-linkedin-square fa-2x"></i></a>
-<a href="https://github.com/huangginny"><i class="fa fa-github fa-2x"></i></a>
-<a href="http://www.flickr.com/photos/orz_zai/"><i class="fa fa-flickr fa-2x"></i></a>
+<p><a href="https://www.facebook.com/orz.zai"><img src="./pics/fb.png" width="32" alt="Facebook"></a>
+<a href="https://twitter.com/Orz_zai"><img src="./pics/Twitter_icon.png" width="32" alt="Twitter"></a>
+<a href="http://www.linkedin.com/in/jh92710"><img src="./pics/linkedin.png" width="32" alt="LinkedIn"></a>
+<a href="http://www.flickr.com/photos/orz_zai/"><img src="./pics/flickr.png" width="32" alt="Flickr"></a>
 </p>
 <p>Hi, I am Ginny Huang and I <del>am currently a senior at</del> just graduated (hard to believe!) from Washington and Lee.</p>
 <p>Please click the headings to see relevant content. You can also read my <u><a href="resume.pdf">resume.</a></u></p>
@@ -146,7 +144,7 @@ Nikon D700 while I travel, and I hope you will checkout my Flickr photostream.
 <br/>
 <hr/>
 <p>
-<cite>Page by Ginny Huang on 28 June, 2013. Last updated on 9 Dec, 2014.</cite>
+<cite>Page by Ginny Huang on 28 June, 2013. Last updated on 6 June, 2014.</cite>
 </p>
 </div>
 </body></html>
