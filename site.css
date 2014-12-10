@@ -43,7 +43,9 @@
 }
 
 #head h1 {
-	font-family: "Garamond", "Georgia", serif;
+    font-family: "Georgia", serif;
+    font-weight: bold;
+    color: DimGray;
 }
 
 #head .intro {
