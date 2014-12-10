@@ -50,7 +50,7 @@
 
 #head .intro {
 	padding-top: 20px;
-	padding-bottom: 50px;
+	padding-bottom: 30px;
 }
 
 #head .intro p {
@@ -58,6 +58,7 @@
 }
 
 #head ul li a {
+	padding-top: 20px;
 	color: black;
 }
 
