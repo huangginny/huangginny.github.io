@@ -1,59 +1,43 @@
-$(document).ready(function(){
-		$("#msHead").click(function(){
-				$('#msHead').animate({color:'white'}, 'fast');
-				$("#msBody").animate({height:'toggle'}, 'slow');
-				$('#msHead').animate({ color:'#000000'}, 'fast');
-		});
+$(function(){
+
+	$(".section").each(function() {
+		var head = $(this).children('.sectionHead');
+		var body = $(this).children('.sectionBody');
+		var col = head.css("color");
 		
-		$("#asHead").click(function(){
-				$('#asHead').animate({color:'white'}, 'fast');
-				$("#asBody").animate({height:'toggle'}, 'slow');
-				$('#asHead').animate({ color:'#000000'}, 'fast');
+		head.hover(function() {
+			$(this).css("color","#FFCC00");
+		},function() {
+			$(this).css("color",col);
 		});
-		
-		$("#psHead").click(function(){
-				$('#psHead').animate({color:'white'}, 'fast');
-				$("#psBody").animate({height:'toggle'}, 'slow');
-				$('#psHead').animate({ color:'#000000'}, 'fast');
+		head.click(function(){
+				head.animate({color:'white'}, 'fast');
+				body.animate({height:'toggle'}, 'slow');
+				head.animate({color: col}, 'fast');
 		});
-		$("#coopHead").click(function(){
-				$("#coopBody").toggle('slow');
-		});
-		$("#graffitiHead").click(function(){
-				$("#graffitiBody").toggle('slow');
-		});
-		$("#picassoHead").click(function(){
-				$("#picassoBody").toggle('slow');
-		});
-		$("#tribHead").click(function(){
-				$("#tribBody").toggle('slow');
-		});
-		
-		$("#lsHead").click(function(){
-				$('#lsHead').animate({color:'whitehege'}, 'fast');
-				$("#lsBody").animate({height:'toggle'}, 'slow');
-				$('#lsHead').animate({ color:'#000000'}, 'fast');
-		});
-		
-		$("#msHead").hover(function(){
-				$("#msHead").css("color","#FFCC00");
-		},function(){
-			$("#msHead").css("color","#000000");
-		});
-		$("#asHead").hover(function(){
-				$("#asHead").css("color","#FFCC00");
-		},function(){
-			$("#asHead").css("color","#000000");
-		});
-		$("#psHead").hover(function(){
-				$("#psHead").css("color","#FFCC00");
-		},function(){
-			$("#psHead").css("color","#000000");
-		});
-		$("#lsHead").hover(function(){
-				$("#lsHead").css("color","#FFCC00");
-		},function(){
-			$("#lsHead").css("color","#000000");
-		});
-		
+	});
+
+	$(function () {
+  		$('[data-toggle="tooltip"]').tooltip()
+	});
+
+	/*
+	 * From StackOverflow: http://stackoverflow.com/questions/14249998/jquery-back-to-top/#answer-14250025
+	 */
+	$(window).scroll(function() {
+		if ($(this).scrollTop()) {
+			$('.toTop').fadeIn();
+		} else {
+			$('.toTop').fadeOut();
+		}
+	});
+
+	$(".toTop").click(function () {
+   		//1 second of animation time
+   		//html works for FFX but not Chrome
+   		//body works for Chrome but not FFX
+   		//This strange selector seems to work universally
+   		$("html, body").animate({scrollTop: 0}, 1000);
+	});
+
 });

@@ -1,0 +1,86 @@
+/* PAGE */
+.section {
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-color: gold;
+	padding: 10px;
+}
+
+.section .sectionBody {
+	display: none;
+}
+
+.sns .fa {
+	color: grey;
+}
+
+.sns .fa:hover {
+	color: gold;
+}
+
+.toTop {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+
+/* HEADER */
+.bg {
+  background: url("./pics/cuba.jpg") no-repeat center center;
+  background-size: 100% 100%;
+  border-radius: 50px;
+  width: 100%;
+  z-index: -1;
+}
+
+.jumbotron {
+  background:rgba(255,255,255,0.5);
+}
+
+#head {
+	text-align: center;
+}
+
+#head h1 {
+	font-family: "Garamond", "Georgia", serif;
+}
+
+#head .intro {
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+#head .intro p {
+	font-size: 14pt;
+}
+
+#head ul li a {
+	color: black;
+}
+
+#head ul li a:hover{
+	color: gold;
+	text-decoration: underline;
+	background-color: transparent;
+}
+
+/* ABOUT SECTION */
+.tooBig {
+	width: 60%;
+}
+
+#aboutSection span.small {
+	font-size: 10pt;
+}
+
+/* CONTACT SECTION */
+
+#contactSection .list-group {
+	box-shadow: none;
+	border: none;
+}
+
+#contactSection .list-group-item {
+	border: none;
+}
