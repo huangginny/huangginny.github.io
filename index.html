@@ -49,23 +49,47 @@
                   <a href="#contactSection" type="button" class="btn btn-lg btn-link">Contact me</a>
                </li>
             </ul>
-            <!--<img src="./pics/ng2.jpg" alt="texttodisplaywhenbrowsercantloadimage">-->
          </div>
       </div>
    </div>
-   <div class="container"><div class="row">
-      <!-- ###### About ######-->
-      <div id="aboutSection" class="col-md-12 section">
-         <div class="sectionHead">
-            <br/>
-            <h3>Micellaneous</h3>
+   <div class="container">
+      <div class="row">
+         <!-- ###### Timeline ######-->
+         <div id="tlSection" class="col-md-12 section">
+            <div class="sectionHead">
+               <br/>
+               <h3>Timeline</h3>
+            </div>
+            <div class="sectionBody">
+               <p class="col-md-12">
+                  This is the most boring way to tell you about myself... Nevertheless, it's simple and self-explanatory.
+               </p>
+               <div data-bind="foreach: timeline">
+                  <div data-bind="css: {'row': true, 'milestone': milestone}">
+                     <div class="col-sm-3">
+                        <span class="pull-right" data-bind="text: time"></span>
+                     </div>
+                     <div class="col-sm-9">
+                        <span data-bind="html: event"></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
          </div>
-         <div class="sectionBody">
-            <p>I was born on a summer day in 1992 in Shenzhen, China. It was a small but
-               dense coastal city; also, at least 80% of its population are immigrants from
-               other areas of China. I attended Shenzhen Foreign Languages School for middle
-               school for six years, and they were the most golden years in life.
-               <br/><img src="./pics/lomo.jpg" alt="SFLS" class="tooBig"><br/><span class="small">Shenzhen Foreign Languages School</span><br/></p>
+         <!-- ###### About ######-->
+         <div id="aboutSection" class="col-md-12 section">
+            <div class="sectionHead">
+               <br/>
+               <h3>Micellaneous</h3>
+            </div>
+            <div class="sectionBody">
+               <p>I was born on a summer day in 1992 in Shenzhen, China. It was a small but
+                  dense coastal city; also, at least 80% of its population are immigrants from
+                  other areas of China. I attended Shenzhen Foreign Languages School for middle
+                  school for six years, and they were the most golden years in life.
+                  <br/><img src="./pics/lomo.jpg" alt="SFLS" class="tooBig"><br/>
+                  <span class="small">Shenzhen Foreign Languages School</span><br/>
+               </p>
                <p>In September 2010, I came across the Pacific to Washington and Lee to grow up
                   and gain some real adventure. I declared double major in Computer Science and 
                   Mathematics in my sophomore year, despite that before I come, my goal was to get
@@ -74,6 +98,7 @@
                </p>
             </div>
          </div>
+
          <!-- ##### CONTACT ##### -->
          <div id="contactSection" class="col-md-12 section">
             <div class="sectionHead">

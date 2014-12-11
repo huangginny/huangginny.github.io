@@ -1,5 +1,145 @@
 $(function(){
 
+	/* Timeline */
+	var TIMELINE = [
+		{
+			'time': '2014.9',
+			'event': 'Starts internship at Center For Open Science',
+			'milestone': true,
+			//'details': []
+		},
+		{
+			'time': '2014.5',
+			'event': 'Graduates from Washington and Lee University',
+			'milestone': true
+			//'details': []
+		},
+		{
+			'time': '2013.5 - 2013.8',
+			'event': 'Works on Android Automated UI Testing in AmLogic, Inc in '
+				+ 'Santa Clara, CA',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '2013.4',
+			'event': 'Goes to Cuba with Christy Cui',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '2012.6 - 2012.8',
+			'event': 'Researches on properties of fibonacci numbers as an'
+				+ ' R.E.Lee Scholar, with Professor Dresden and my classmate Cathy',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '2011.10',
+			'event': 'Starts work study at Phonathon',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '2011.7',
+			'event': 'Movie <i>Harry Potter and the Deathly Hallows - Part 2</i> '
+				+ 'is published, marking the end of the Potter era',
+			'milestone': true,
+			//'details': []
+		},
+		{
+			'time': '2011.4',
+			'event': 'Starts my first solo trip in Washington D.C',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '2010.9',
+			'event': 'Enrolls in Washington and Lee University',
+			'milestone': true,
+			//'details': []
+		},
+		{
+			'time': '2010.6',
+			'event': 'Graduates from Shenzhen Foreign Languages School',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '2009.3',
+			'event': 'Passes my first TOEFL',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '2008.3',
+			'event': 'Co-direct my first short film, <i>Illusion</i>, which '
+				+ 'turns out to be a disaster',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '2007.7',
+			'event': 'The book <i>Harry Potter and the Deathly Hallows</i> is published',
+			'milestone': true,
+			//'details': []
+		},
+		{
+			'time': '2007.7',
+			'event': 'Screws up my high school entrance exam',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '2004.9',
+			'event': 'Starts middle school in Shenzhen Foreign Languages School',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '2004.6',
+			'event': 'Graduates from elementary school',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '2004.6',
+			'event': 'Passed my best test',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '1999.?',
+			'event': "Reads <i>Harry Potter and the Philosopher's Stone</i>",
+			'milestone': true,
+			//'details': []
+		},
+		{
+			'time': '1998.9',
+			'event': 'Starts elementary school',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '1997.?',
+			'event': 'Talks',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '1994.?',
+			'event': 'Walks',
+			'milestone': false,
+			//'details': []
+		},
+		{
+			'time': '1992.7',
+			'event': 'Born',
+			'milestone': true,
+			//'details': []
+		}
+	];
+
 	/* Social network */
 	var SNS_LINKS = [
 		{
@@ -28,7 +168,9 @@ $(function(){
 			'icon': '<i class="fa fa-flickr fa-2x"></i>'
 		},
 	];
-	ko.applyBindings({'links': SNS_LINKS});
+
+	ko.applyBindings({'timeline': TIMELINE}, document.getElementById('tlSection'));
+	ko.applyBindings({'links': SNS_LINKS}, document.getElementById('contactSection'));
 
 	/* WHOLE PAGE */
 	$(".section").each(function() {

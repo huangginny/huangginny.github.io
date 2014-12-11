@@ -73,6 +73,11 @@
 	text-shadow: 0 0 2px dimGray;
 }
 
+/* TIMELINE SECTION */
+#tlSection .milestone {
+	font-weight: bold;
+}
+
 /* ABOUT SECTION */
 .tooBig {
 	width: 60%;
