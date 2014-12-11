@@ -66,12 +66,14 @@
                </p>
                <div data-bind="foreach: timeline">
                   <div data-bind="css: {'row': true, 'milestone': milestone}">
-                     <div class="col-sm-3">
-                        <span class="pull-right" data-bind="text: time"></span>
+                     <div class="col-xs-12 col-sm-3">
+                        <span class="hidden-xs pull-right" data-bind="text: time"></span>
+                        <span class="visible-xs-inline pull-left" data-bind="text: time"></span>
                      </div>
-                     <div class="col-sm-9">
+                     <div class="col-xs-12 col-sm-9">
                         <span data-bind="html: event"></span>
                      </div>
+                     <span class="visible-xs-inline"><br/></span>
                   </div>
                </div>
             </div>
