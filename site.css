@@ -63,11 +63,11 @@
 	font-weight: bold;
 	font-family: "Georgia", serif;
 	font-size: 15pt;
-	text-shadow: 0 0 2px white;
+	text-shadow: 0 0 2px lightyellow;
 }
 
 #head ul li a:hover{
-	color: white;
+	color: lightyellow;
 	/*text-decoration: underline;*/
 	background-color: transparent;
 	text-shadow: 0 0 2px dimGray;
