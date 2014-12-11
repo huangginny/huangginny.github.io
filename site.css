@@ -59,13 +59,18 @@
 
 #head ul li a {
 	padding-top: 20px;
-	color: black;
+	color: dimGray;
+	font-weight: bold;
+	font-family: "Georgia", serif;
+	font-size: 15pt;
+	text-shadow: 0 0 2px white;
 }
 
 #head ul li a:hover{
-	color: gold;
-	text-decoration: underline;
+	color: white;
+	/*text-decoration: underline;*/
 	background-color: transparent;
+	text-shadow: 0 0 2px dimGray;
 }
 
 /* ABOUT SECTION */
