@@ -6,8 +6,9 @@ be out of date. I am going to update it asap.
 
 Next steps: 
 
-1. Re-arrange the boxes using bootstrap to avoid unnecessary css;
-2. Use FontAwesome for social network links;
-3. Remove "Link"
+1. In the right of "Contact" block, add links to create pull request and issue tracker. Also, put an arrow in the "Back to top" button
+2. The "Personal" field will let us play a game (either answering questions about me or play Minesweeper)
+3. Project field would be divided into three parts: Java, Web and Mobile (Stacked nav-pills?)
+4. Timeline! Not experience.
 
 This page is always underconstruction.
