@@ -2,6 +2,7 @@
 <html>
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <!-- Dependencied -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -9,6 +10,9 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+
+   <!-- Local -->
    <script src="site.js"></script>
    <link rel="stylesheet" type="text/css" href="site.css">
    <link rel="shortcut icon" href="./pics/hp.png">
@@ -100,12 +104,15 @@
                </div>
                <div class="col-md-6" align="center">
                   <br/>
-                  <div class="sns">
-                     <a data-toggle="tooltip" data-placement="top" title="Facebook" href="https://www.facebook.com/orz.zai" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
-                     <a data-toggle="tooltip" data-placement="top" title="Twitter" href="https://twitter.com/intent/tweet?screen_name=Orz_zai" data-related="Orz_zai" class="twitter-mention-button" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
-                     <a data-toggle="tooltip" data-placement="top" title="LinkedIn" href="http://www.linkedin.com/in/jh92710" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
-                     <a data-toggle="tooltip" data-placement="top" title="GitHub" href="https://github.com/huangginny" target="_blank"><i class="fa fa-github fa-2x"></i></a>
-                     <a data-toggle="tooltip" data-placement="top" title="Flickr" href="http://www.flickr.com/photos/orz_zai/" target="_blank"><i class="fa fa-flickr fa-2x"></i></a>
+                  <div class="sns row" data-bind="foreach: links">
+                     <a data-bind="html: icon, attr: { href: url, title: name }" data-toggle="tooltip" data-placement="top" title="Facebook" href="https://www.facebook.com/orz.zai" target="_blank">
+                     </a>
+                  </div>
+                  <div class="row">
+                     <p class="col-md-8 col-md-offset-2">
+                        <br/>
+                        Feedback on this page is sincerely appreciated. If you would like to provide some suggestions and improvements, please <a href="https://github.com/huangginny/huangginny.github.io/issues"> <i class="fa fa-exclamation-circle"></i> report it as an issue,</a> or <a href="https://github.com/huangginny/huangginny.github.io/fork"> <i class="fa fa-code-fork"></i> fork this repository</a> and <a href="https://github.com/huangginny/huangginny.github.io/pulls">submit a pull request.</a>
+                     </p>
                   </div>
                </div>
             </div>
