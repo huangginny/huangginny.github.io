@@ -177,16 +177,17 @@ $(function(){
 		var head = $(this).children('.sectionHead');
 		var body = $(this).children('.sectionBody');
 		var col = head.css("color");
-		
+
 		head.hover(function() {
-			$(this).css("color","#FFCC00");
+			$(this).css("color", "#FFCC00");
 		},function() {
-			$(this).css("color",col);
+			$(this).css("color", col);
 		});
+
 		head.click(function(){
-				head.animate({color:'white'}, 'fast');
-				body.animate({height:'toggle'}, 'slow');
-				head.animate({color: col}, 'fast');
+			head.animate({color:'white'}, 'fast');
+			body.animate({height:'toggle'}, 'slow');
+			head.animate({color: col}, 'fast');
 		});
 	});
 
