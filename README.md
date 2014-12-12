@@ -6,9 +6,7 @@ be out of date. I am going to update it asap.
 
 Next steps: 
 
-1. In the right of "Contact" block, add links to create pull request and issue tracker. Also, put an arrow in the "Back to top" button
-2. The "Personal" field will let us play a game (either answering questions about me or play Minesweeper)
-3. Project field would be divided into three parts: Java, Web and Mobile (Stacked nav-pills?)
-4. Timeline! Not experience.
+1. The "Personal" field will let us play a game (either answering questions about me or play Minesweeper)
+2. Project field would be divided into three parts: Java, Web and Mobile (Stacked nav-pills?)
 
 This page is always underconstruction.
