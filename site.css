@@ -57,7 +57,7 @@
 	font-size: 14pt;
 }
 
-#head ul li a {
+#head button {
 	padding-top: 20px;
 	color: dimGray;
 	font-weight: bold;
@@ -66,9 +66,8 @@
 	text-shadow: 0 0 2px lightyellow;
 }
 
-#head ul li a:hover{
+#head button:hover{
 	color: lightyellow;
-	/*text-decoration: underline;*/
 	background-color: transparent;
 	text-shadow: 0 0 2px dimGray;
 }
