@@ -22,7 +22,7 @@ var TIMELINE = [
 {
 	'time': '2013.4',
 	'event': 'Goes to Cuba with Christy Cui',
-	'milestone': false,
+	'milestone': true,
 	'details': ko.observableArray([])
 },
 {
@@ -39,9 +39,15 @@ var TIMELINE = [
 	'details': ko.observableArray([])
 },
 {
+	'time': '2011.10',
+	'event': 'Writes my first computer program in Python',
+	'milestone': false,
+	'details': ko.observableArray([])
+},
+{
 	'time': '2011.7',
 	'event': 'Movie <i>Harry Potter and the Deathly Hallows - Part 2</i> '
-	+ 'is published, marking the end of the Potter era',
+	+ 'is released, marking the end of the Potter era',
 	'milestone': true,
 	'details': ko.observableArray([])
 },
@@ -71,7 +77,7 @@ var TIMELINE = [
 },
 {
 	'time': '2008.3',
-	'event': 'Co-direct my first short film, <i>Illusion</i>, which '
+	'event': 'Co-directs my first short film, <i>Illusion</i>, which '
 	+ 'turns out to be a disaster',
 	'milestone': false,
 	'details': ko.observableArray([])
@@ -91,7 +97,7 @@ var TIMELINE = [
 {
 	'time': '2004.9',
 	'event': 'Starts middle school in Shenzhen Foreign Languages School',
-	'milestone': false,
+	'milestone': true,
 	'details': ko.observableArray([])
 },
 {

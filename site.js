@@ -53,6 +53,7 @@ $(function(){
    		//html works for FFX but not Chrome
    		//body works for Chrome but not FFX
    		//This strange selector seems to work universally
+   		$(".sectionBody").hide();
    		$("html, body").animate({scrollTop: 0});
 	});
 
