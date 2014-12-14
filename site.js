@@ -34,7 +34,7 @@ $(function(){
 		});
 	});
 
-  	$('[data-toggle="tooltip"]').tooltip()
+  	$('[data-toggle="tooltip"]').tooltip();
 
   	/* --- BOTTOM --- */
 	/*
@@ -53,7 +53,7 @@ $(function(){
    		//html works for FFX but not Chrome
    		//body works for Chrome but not FFX
    		//This strange selector seems to work universally
-   		$(".sectionBody").hide();
+   		$(".sectionBody").hide(1000);
    		$("html, body").animate({scrollTop: 0});
 	});
 
