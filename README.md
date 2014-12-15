@@ -1,4 +1,4 @@
-**Note to everyone making pull requests**: I respect every word of contribution to my website and would like to acknoledge every contributor properly. Therefore, when you modify my code and make a pull request, please add your name to the footer in the following format:
+**Note to everyone making pull requests**: I respect every word of contribution to my website and would like to acknowledge every contributor properly. Therefore, when you modify my code and make a pull request, please add your name to the footer in the following format:
 
 <i>Page by Ginny Huang on 28 June, 2013, and contributed by </i>YOUR-NAME-HERE<i>. Last updated on </i>DATE-MODIFIED.
 
