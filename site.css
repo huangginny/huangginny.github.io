@@ -77,6 +77,12 @@
 	font-weight: bold;
 }
 
+/* TECHNICAL SECTION */
+.project {
+	padding: 20px;
+	padding-bottom: 30px;
+}
+
 /* ABOUT SECTION */
 .tooBig {
 	width: 60%;
