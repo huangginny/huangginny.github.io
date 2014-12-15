@@ -78,9 +78,13 @@
 }
 
 /* TECHNICAL SECTION */
-.project {
+#projectSection .project {
 	padding: 20px;
 	padding-bottom: 30px;
+}
+
+#projectSection .project-overview ul {
+	list-style-type: none;"]
 }
 
 /* ABOUT SECTION */
