@@ -67,13 +67,9 @@ $(function () {
 
 		self.board = ko.observableArray();
 
+		self.canPlay = ko.observable(true);
 		self.isPlaying = ko.observable(false);
 		self.numOfMines = ko.observable(36);
-
-		self.hasWon = ko.computed(function() {
-			// TODO
-			return false;
-		});
 
 		self.newBoard = function () {
 			var clearBoard = ko.observableArray();
@@ -123,9 +119,29 @@ $(function () {
 			self.isPlaying(true);
 		};
 
+		self.hasWon = ko.computed(function() {
+			if (self.board().length === 0) {
+				return false;
+			}
+			for (var i = 0; i < GRIDS_PER_LINE; i++) {
+				for (var j = 0; j < GRIDS_PER_LINE; j++) {
+					// check around and count mines
+					var grid = self.board()[i]()[j];
+					if (grid.isMine()) continue;
+					if (!grid.isClicked()) return false;
+				}
+			}
+			self.canPlay(false);
+			return true;
+		});
+
+		self.hasLost = ko.observable(false);
+
 		self.reset = function() {
 			self.newBoard();
+			self.canPlay(true);
 			self.isPlaying(false);
+			self.hasLost(false);
 		};
 
 	};

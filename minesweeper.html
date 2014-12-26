@@ -38,9 +38,12 @@
 <body>
    <div class="container">
       <div id="minesweeper" class="row">
+         <div class="page-header">
+            <h2>Minesweeper</h2>
+         </div>
          <div data-bind="foreach: board">
             <div class="hidden-xs col-sm-12" data-bind="foreach: $data">
-               <button class='btn btn-default btn-small' data-bind='css: {active: !clickable()}, click: show'>
+               <button class='btn btn-default btn-small' data-bind='css: {active: !clickable(), disabled: isClicked() || !parent.canPlay()}, click: show'>
                   <span data-bind="if: isClicked">
                      <span data-bind="if: content() == 0">&nbsp;</span>
                      <span data-bind="ifnot: content() == 0">
@@ -52,7 +55,7 @@
                </button>
             </div>
             <div class="visible-xs-block col-xs-12" style="margin: -2px" data-bind="foreach: $data">
-               <button class='btn btn-default btn-x-small' data-bind='css: {active: !clickable()}, click: show'>
+               <button class='btn btn-default btn-x-small' data-bind='css: {active: !clickable(), disabled: isClicked() || !parent.canPlay()}, click: show'>
                   <span data-bind="if: isClicked">
                      <span data-bind="if: content() == 0">&nbsp;</span>
                      <span data-bind="ifnot: content() == 0">
@@ -63,6 +66,10 @@
                   <span data-bind='if: clickable'>&nbsp;</span>
                </button>
             </div>
+         </div>
+         <div>
+            <span data-bind="if: hasWon">You win!</span>
+            <span data-bind="if: hasLost">You lose!</span>
          </div>
       </div>
    </div>
