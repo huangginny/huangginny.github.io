@@ -17,9 +17,20 @@
    <script src="minesweeper.js"></script>
    <link rel="stylesheet" type="text/css" href="site.css">
    <style type="text/css">
-   button {
-      margin: 0px;
+   .btn-small {
       padding: 0px;
+      margin: 0px;
+      width: 30px;
+      height: 30px;
+      border-radius: 3px;
+   }
+   .btn-x-small {
+      padding: 0px;
+      margin: -1px;
+      width: 15px;
+      height: 15px;
+      border-radius: 1px;
+      font-size: 10px;
    }
    </style>
    <title>Minesweeper</title>
@@ -28,8 +39,20 @@
    <div class="container">
       <div id="minesweeper" class="row">
          <div data-bind="foreach: board">
-            <div class="row" data-bind="foreach: $data">
-               <button class='btn btn-default btn-xs' data-bind='css: {active: !clickable()}, click: show'>
+            <div class="hidden-xs col-sm-12" data-bind="foreach: $data">
+               <button class='btn btn-default btn-small' data-bind='css: {active: !clickable()}, click: show'>
+                  <span data-bind="if: isClicked">
+                     <span data-bind="if: content() == 0">&nbsp;</span>
+                     <span data-bind="ifnot: content() == 0">
+                        <span data-bind="html: content"></span>
+                     </span>
+                  </span>
+                  <span data-bind='if: isFlagged'><i class="fa fa-flag"></i></span>
+                  <span data-bind='if: clickable'>&nbsp;</span>
+               </button>
+            </div>
+            <div class="visible-xs-block col-xs-12" style="margin: -2px" data-bind="foreach: $data">
+               <button class='btn btn-default btn-x-small' data-bind='css: {active: !clickable()}, click: show'>
                   <span data-bind="if: isClicked">
                      <span data-bind="if: content() == 0">&nbsp;</span>
                      <span data-bind="ifnot: content() == 0">
