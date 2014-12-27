@@ -41,6 +41,9 @@
          <div class="page-header">
             <h2>Minesweeper</h2>
          </div>
+         <div class='col-xs-12' style='padding: 10px;'>
+            <select class="selectpicker" data-bind="disable: isPlaying, options: chooseMines, value: numOfMines"></select>
+         </div>
          <div data-bind="foreach: board">
             <div class="hidden-xs col-sm-12" data-bind="foreach: $data">
                <button class='btn btn-default btn-small' data-bind='css: {active: !clickable(), disabled: isClicked() || !parent.canPlay()}, click: show'>

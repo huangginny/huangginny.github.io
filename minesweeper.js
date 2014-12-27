@@ -34,7 +34,16 @@ $(function () {
 				return;
 			}
 			self.isClicked(true);
+			// end game
 			if (self.isMine()) {
+				for (var i = 0; i < GRIDS_PER_LINE; i++) {
+					for (var j = 0; j < GRIDS_PER_LINE; j++) {
+						var grid = self.parent.board()[i]()[j];
+						if (grid.isMine()) {
+							grid.isClicked(true);
+						}
+					}
+				}
 				parent.canPlay(false);
 				parent.hasLost(true);
 			} else if (self.content() === 0) {
@@ -70,6 +79,11 @@ $(function () {
 		self.canPlay = ko.observable(true);
 		self.isPlaying = ko.observable(false);
 		self.numOfMines = ko.observable(36);
+		
+		self.chooseMines = [];
+		for (var m = 30; m <= 50; m += 2) {
+			self.chooseMines.push(m);
+		}
 
 		self.newBoard = function () {
 			var clearBoard = ko.observableArray();
