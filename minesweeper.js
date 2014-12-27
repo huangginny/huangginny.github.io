@@ -18,10 +18,12 @@ $(function () {
 			return self.content() === MINE_IMG;
 		});
 
-		self.clickable = ko.observable(true);
-
 		self.isClicked = ko.observable(false);
 		self.isFlagged = ko.observable(false);
+
+		self.clickable = ko.computed(function(){
+			return !self.isClicked() && !self.isFlagged();
+		});
 
 		self.show = function() {
 			// if game hasn't started, start it
@@ -32,9 +34,9 @@ $(function () {
 				return;
 			}
 			self.isClicked(true);
-			self.clickable(false);
 			if (self.isMine()) {
-				// end the game and stuff...
+				parent.canPlay(false);
+				parent.hasLost(true);
 			} else if (self.content() === 0) {
 				for (var i = self.x_coord - 1; i <= self.x_coord + 1; i++) {
 					for (var j = self.y_coord - 1; j <= self.y_coord + 1; j++) {
@@ -52,11 +54,9 @@ $(function () {
 		self.flag = function() {
 			if (self.clickable()) {
 				self.isFlagged(true);
-				self.clickable(false);
 			} else if (self.isFlagged()) {
 				// if it is already flagged, unflag
 				self.isFlagged(false);
-				self.clickable(true);
 			}
 		};
 	};

@@ -67,9 +67,10 @@
                </button>
             </div>
          </div>
-         <div>
-            <span data-bind="if: hasWon">You win!</span>
-            <span data-bind="if: hasLost">You lose!</span>
+         <div class='col-xs-12' style="padding: 10px;">
+            <div data-bind="if: hasWon">You win!</div>
+            <div data-bind="if: hasLost">You lose!</div>
+            <button class='btn btn-primary' data-bind="click: reset">Replay</button>
          </div>
       </div>
    </div>
