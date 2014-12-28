@@ -45,14 +45,20 @@
          <div class="page-header">
             <h2>Minesweeper</h2>
          </div>
-         <div class='col-xs-12' style='padding: 10px;'>
+         <div class='col-xs-12'>
             <ol>
                <li>Select the number of mines in the board in the selector below;</li>
                <li>Left click to reveal a grid</li>
                <li>Left click on a revealed grid to reveal the grids around it</li>
                <li>Right click to flag it... Sorry mobile users, I'll fix it asap</li>
             </ol>
+         </div>
+         <div class='col-xs-12' style='padding: 10px;'>
             <select class="selectpicker" data-bind="disable: isPlaying, options: chooseMines, value: numOfMines"></select>
+            &nbsp;
+            <span>Remaining mines: 
+               <span data-bind="text: minesLeft"></span>
+            </span>
          </div>
          <div data-bind="foreach: board">
             <div class="hidden-xs col-sm-12" data-bind="foreach: $data">

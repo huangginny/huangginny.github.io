@@ -77,9 +77,11 @@ $(function () {
 		self.flag = function() {
 			if (self.clickable()) {
 				self.isFlagged(true);
+				parent.numOfFlags(parent.numOfFlags() + 1);
 			} else if (self.isFlagged()) {
 				// if it is already flagged, unflag
 				self.isFlagged(false);
+				parent.numOfFlags(parent.numOfFlags() - 1);
 			}
 		};
 	};
@@ -92,6 +94,10 @@ $(function () {
 
 		self.isPlaying = ko.observable(false);
 		self.numOfMines = ko.observable(36);
+		self.numOfFlags = ko.observable(0);
+		self.minesLeft = ko.computed(function() {
+			return self.numOfMines() - self.numOfFlags();
+		});
 		
 		self.chooseMines = [];
 		for (var m = 30; m <= 50; m += 2) {
