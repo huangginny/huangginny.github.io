@@ -1,5 +1,8 @@
 $(function(){
 
+	$.mobile.ajaxEnabled = false;
+	$.mobile.loading().hide();
+
 	/* --- HEADER --- */
 	$("#head button").each(function() {
 		$(this).click(function() {
