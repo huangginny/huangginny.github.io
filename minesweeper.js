@@ -177,6 +177,7 @@ $(function () {
 
 		self.reset = function() {
 			self.newBoard();
+			self.numOfFlags(0);
 			self.isPlaying(false);
 			self.hasLost(false);
 		};
