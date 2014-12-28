@@ -1,5 +1,8 @@
 $(function () {
 
+	$.mobile.ajaxEnabled = false;
+	$.mobile.loading().hide();
+
 	var MINE_IMG = '<i class="fa fa-bomb"></i>';
 
 	var GRIDS_PER_LINE = 16;
@@ -63,6 +66,10 @@ $(function () {
 		}
 
 		self.show = function() {
+			if ($(this).data("longTapRegistered")) {
+				$(this).removeData("longTapRegistered");
+				return;
+			}
 			// if game hasn't started, start it
 			if (!(self.parent.isPlaying())) {
 				self.parent.startGame(self.x_coord, self.y_coord);
@@ -75,6 +82,7 @@ $(function () {
 		};
 
 		self.flag = function() {
+			$(this).data("longTapRegistered", true);
 			if (self.clickable()) {
 				self.isFlagged(true);
 				parent.numOfFlags(parent.numOfFlags() + 1);
