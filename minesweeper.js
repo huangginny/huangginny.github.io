@@ -25,11 +25,23 @@ $(function () {
 			return !self.isClicked() && !self.isFlagged();
 		});
 
-		self.show = function() {
-			// if game hasn't started, start it
-			if (!(self.parent.isPlaying())) {
-				self.parent.startGame(self.x_coord, self.y_coord);
+		self.showAround = function() {
+			if (!self.isClicked()) {
+				return;
 			}
+			for (var i = self.x_coord - 1; i <= self.x_coord + 1; i++) {
+				for (var j = self.y_coord - 1; j <= self.y_coord + 1; j++) {
+					if ((0 <= i && i < GRIDS_PER_LINE) &&
+						(0 <= j && j < GRIDS_PER_LINE) &&
+						(i != self.x_coord || j != self.y_coord)) {
+						var grid = self.parent.board()[i]()[j];
+						grid.showSelf();
+					}
+				}
+			}
+		};
+
+		self.showSelf = function() {
 			if (!self.clickable()) {
 				return;
 			}
@@ -39,7 +51,7 @@ $(function () {
 				for (var i = 0; i < GRIDS_PER_LINE; i++) {
 					for (var j = 0; j < GRIDS_PER_LINE; j++) {
 						var grid = self.parent.board()[i]()[j];
-						if (grid.isMine()) {
+						if (grid.isMine() && !(grid.isFlagged())) {
 							grid.isClicked(true);
 						}
 					}
@@ -47,16 +59,19 @@ $(function () {
 				parent.canPlay(false);
 				parent.hasLost(true);
 			} else if (self.content() === 0) {
-				for (var i = self.x_coord - 1; i <= self.x_coord + 1; i++) {
-					for (var j = self.y_coord - 1; j <= self.y_coord + 1; j++) {
-						if ((0 <= i && i < GRIDS_PER_LINE) &&
-							(0 <= j && j < GRIDS_PER_LINE) &&
-							(i != self.x_coord || j != self.y_coord)) {
-							var grid = self.parent.board()[i]()[j];
-							grid.show();
-						}
-					}
-				}
+				self.showAround();
+			}
+		}
+
+		self.show = function() {
+			// if game hasn't started, start it
+			if (!(self.parent.isPlaying())) {
+				self.parent.startGame(self.x_coord, self.y_coord);
+			}
+			if (!self.clickable()) {
+				self.showAround();
+			} else {
+				self.showSelf();
 			}
 		};
 

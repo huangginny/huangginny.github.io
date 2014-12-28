@@ -32,6 +32,10 @@
       border-radius: 1px;
       font-size: 10px;
    }
+   .btn-default.active,
+   .btn-default:active {
+      background-color: white;
+   }
    </style>
    <title>Minesweeper</title>
 </head>
@@ -42,30 +46,50 @@
             <h2>Minesweeper</h2>
          </div>
          <div class='col-xs-12' style='padding: 10px;'>
+            <ol>
+               <li>Select the number of mines in the board in the selector below;</li>
+               <li>Left click to reveal a grid</li>
+               <li>Left click on a revealed grid to reveal the grids around it</li>
+               <li>Right click to flag it... Sorry mobile users, I'll fix it asap</li>
+            </ol>
             <select class="selectpicker" data-bind="disable: isPlaying, options: chooseMines, value: numOfMines"></select>
          </div>
          <div data-bind="foreach: board">
             <div class="hidden-xs col-sm-12" data-bind="foreach: $data">
-               <button class='btn btn-default btn-small' data-bind='css: {active: !clickable(), disabled: isClicked() || !parent.canPlay()}, click: show'>
+               <button class='btn btn-default btn-small' data-bind='css: {active: isClicked(), enabled: parent.canPlay()}, click: show, event: { contextmenu: flag }'>
                   <span data-bind="if: isClicked">
                      <span data-bind="if: content() == 0">&nbsp;</span>
                      <span data-bind="ifnot: content() == 0">
                         <span data-bind="html: content"></span>
                      </span>
                   </span>
-                  <span data-bind='if: isFlagged'><i class="fa fa-flag"></i></span>
+                  <span data-bind='if: isFlagged'>
+                     <span data-bind="if: isMine() || !parent.hasLost()">
+                        <i class="fa fa-flag"></i>
+                     </span>
+                     <span data-bind="if: parent.hasLost() && !isMine()">
+                        <i class="fa fa-times"></i>
+                     </span>
+                  </span>
                   <span data-bind='if: clickable'>&nbsp;</span>
                </button>
             </div>
             <div class="visible-xs-block col-xs-12" style="margin: -2px" data-bind="foreach: $data">
-               <button class='btn btn-default btn-x-small' data-bind='css: {active: !clickable(), disabled: isClicked() || !parent.canPlay()}, click: show'>
+               <button class='btn btn-default btn-x-small' data-bind='css: {active: isClicked(), enabled: parent.canPlay()}, click: show, event: { contextmenu: flag }'>
                   <span data-bind="if: isClicked">
                      <span data-bind="if: content() == 0">&nbsp;</span>
                      <span data-bind="ifnot: content() == 0">
                         <span data-bind="html: content"></span>
                      </span>
                   </span>
-                  <span data-bind='if: isFlagged'><i class="fa fa-flag"></i></span>
+                  <span data-bind='if: isFlagged'>
+                     <span data-bind="if: isMine() || !parent.hasLost()">
+                        <i class="fa fa-flag"></i>
+                     </span>
+                     <span data-bind="if: parent.hasLost() && !isMine()">
+                        <i class="fa fa-times"></i>
+                     </span>
+                  </span>
                   <span data-bind='if: clickable'>&nbsp;</span>
                </button>
             </div>
