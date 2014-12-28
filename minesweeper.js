@@ -56,7 +56,6 @@ $(function () {
 						}
 					}
 				}
-				parent.canPlay(false);
 				parent.hasLost(true);
 			} else if (self.content() === 0) {
 				self.showAround();
@@ -91,7 +90,6 @@ $(function () {
 
 		self.board = ko.observableArray();
 
-		self.canPlay = ko.observable(true);
 		self.isPlaying = ko.observable(false);
 		self.numOfMines = ko.observable(36);
 		
@@ -160,15 +158,19 @@ $(function () {
 					if (!grid.isClicked()) return false;
 				}
 			}
-			self.canPlay(false);
 			return true;
 		});
 
 		self.hasLost = ko.observable(false);
 
+		self.canPlay = ko.computed(function(){
+			var stop = self.hasWon() || self.hasLost();
+			return !stop;
+		})
+
+
 		self.reset = function() {
 			self.newBoard();
-			self.canPlay(true);
 			self.isPlaying(false);
 			self.hasLost(false);
 		};

@@ -56,7 +56,7 @@
          </div>
          <div data-bind="foreach: board">
             <div class="hidden-xs col-sm-12" data-bind="foreach: $data">
-               <button class='btn btn-default btn-small' data-bind='css: {active: isClicked(), enabled: parent.canPlay()}, click: show, event: { contextmenu: flag }'>
+               <button class='btn btn-default btn-small' data-bind='enable: parent.canPlay(), css: {active: isClicked()}, click: show, event: { contextmenu: flag }'>
                   <span data-bind="if: isClicked">
                      <span data-bind="if: content() == 0">&nbsp;</span>
                      <span data-bind="ifnot: content() == 0">
@@ -75,7 +75,7 @@
                </button>
             </div>
             <div class="visible-xs-block col-xs-12" style="margin: -2px" data-bind="foreach: $data">
-               <button class='btn btn-default btn-x-small' data-bind='css: {active: isClicked(), enabled: parent.canPlay()}, click: show, event: { contextmenu: flag }'>
+               <button class='btn btn-default btn-x-small' data-bind='enable: parent.canPlay(), css: {active: isClicked()}, click: show, event: { contextmenu: flag }'>
                   <span data-bind="if: isClicked">
                      <span data-bind="if: content() == 0">&nbsp;</span>
                      <span data-bind="ifnot: content() == 0">
