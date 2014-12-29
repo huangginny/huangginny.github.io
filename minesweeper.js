@@ -82,7 +82,9 @@ $(function () {
 		};
 
 		self.flag = function(data, event) {
-			$(this).data("longTapRegistered", true);
+			if (event.type === 'taphold') {
+				$(this).data("longTapRegistered", true);				
+			}
 			if (self.clickable()) {
 				self.isFlagged(true);
 				parent.numOfFlags(parent.numOfFlags() + 1);
@@ -90,9 +92,6 @@ $(function () {
 				// if it is already flagged, unflag
 				self.isFlagged(false);
 				parent.numOfFlags(parent.numOfFlags() - 1);
-				if (event.type === 'contextmenu') {
-					$(this).removeData("longTapRegistered");
-				}
 			}
 		};
 	};
