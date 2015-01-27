@@ -92,27 +92,35 @@
 	width: 60%;
 }
 
+
+.fa-question-circle:hover {
+	color: gold;
+}
+
 #aboutSection span.small {
 	font-size: 10pt;
 }
 
 #minesweeper .btn-small {
-      padding: 0px;
-      margin: 0px;
-      width: 30px;
-      height: 30px;
-      border-radius: 3px;
-   }
+    padding: 0px;
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+}
+
 #minesweeper .visible-xs-block {
 	line-height: 15px; /* must be same as button height and width */
 }
+
 #minesweeper .btn-x-small {
-      padding: 0px;
-      margin: -1px;
-      width: 15px;
-      height: 15px;
-      border-radius: 0px;
-   }
+    padding: 0px;
+    margin: -1px;
+    width: 15px;
+    height: 15px;
+    border-radius: 0px;
+    font-size: 7pt;
+}
 #minesweeper .btn-default.active, #minesweeper .btn-default:active {
       background-color: white;
    }

@@ -165,7 +165,13 @@
             </div>
             <div class="sectionBody">
                <div id="minesweeper">
-                  <div style='padding: 10px;'>
+                  <div style='padding: 20px;'>
+                     <div class="pull-right">
+                        <a type="button" class="btn btn-link" data-toggle="modal" data-target="#minesweeper-rules">
+                           <i class="fa fa-3x fa-question-circle"></i>
+                        </a>
+                        <button class='btn btn-primary' data-bind="click: reset">Replay</button>
+                     </div>
                      Total number of mines: 
                      <select class="selectpicker" data-role="none" data-bind="disable: isPlaying, options: chooseMines, value: numOfMines"></select>
                      <br/>
@@ -270,12 +276,32 @@
             <br/>
             <hr/>
             <p>
-               <cite>Page by Ginny Huang on 28 June, 2013. Last updated on 12 Dec, 2014.</cite>
+               <cite>Page by Ginny Huang on 28 June, 2013. Last updated on 26 Jan, 2015.</cite>
             </p>
             <br/>
          </div>
       </div>
    </div>
+</div>
+
+<!-- Minesweeper Rules -->
+<div class="modal fade" id="minesweeper-rules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">How to play Minesweeper?</h4>
+      </div>
+      <div class="modal-body">
+         <ol>
+            <li>Select the number of mines in the board in the selector</li>
+            <li>Left click to reveal a grid</li>
+            <li>Left click on a revealed grid to reveal grids around it</li>
+            <li>Right click or tap for <b>1 second</b> (for touchscreen users) to flag it</li>
+         </ol>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ### Back to Top Panel -->
