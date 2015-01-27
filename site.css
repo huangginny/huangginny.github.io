@@ -104,13 +104,13 @@
       border-radius: 3px;
    }
 #minesweeper .visible-xs-block {
-	line-height: 13px; /* must be same as button height and width */
+	line-height: 15px; /* must be same as button height and width */
 }
 #minesweeper .btn-x-small {
       padding: 0px;
       margin: -1px;
-      width: 13px;
-      height: 13px;
+      width: 15px;
+      height: 15px;
       border-radius: 0px;
    }
 #minesweeper .btn-default.active, #minesweeper .btn-default:active {
