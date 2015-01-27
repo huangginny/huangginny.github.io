@@ -17,6 +17,7 @@
    <!-- Local -->
    <script src="static.js"></script>
    <script src="site.js"></script>
+   <script src="minesweeper.js"></script>
    <link rel="stylesheet" type="text/css" href="site.css">
    <link rel="shortcut icon" href="./pics/hp.png">
    <title>Ginny Huang's Homepage</title>
@@ -163,9 +164,61 @@
                <h3>Micellaneous</h3>
             </div>
             <div class="sectionBody">
-               <p>
-                  To be implemented...
-               </p>
+               <div id="minesweeper">
+                  <div style='padding: 10px;'>
+                     Total number of mines: 
+                     <select class="selectpicker" data-role="none" data-bind="disable: isPlaying, options: chooseMines, value: numOfMines"></select>
+                     <br/>
+                     <span>Remaining mines: 
+                        <span data-bind="text: minesLeft"></span>
+                     </span>
+                  </div>
+                  <div data-bind="foreach: board" align="center">
+                     <div class="hidden-xs" data-bind="foreach: $data">
+                        <button class='btn btn-default btn-small' data-bind='enable: parent.canPlay(), css: {active: isClicked()}, click: show, event: { contextmenu: flag, taphold: flag }'>
+                           <span data-bind="if: isClicked">
+                              <span data-bind="if: content() == 0">&nbsp;</span>
+                              <span data-bind="ifnot: content() == 0">
+                                 <span data-bind="html: content"></span>
+                              </span>
+                           </span>
+                           <span data-bind='if: isFlagged'>
+                              <span data-bind="if: isMine() || !parent.hasLost()">
+                                 <i class="fa fa-flag"></i>
+                              </span>
+                              <span data-bind="if: parent.hasLost() && !isMine()">
+                                 <i class="fa fa-times"></i>
+                              </span>
+                           </span>
+                           <span data-bind='if: clickable'>&nbsp;</span>
+                        </button>
+                     </div>
+                     <div class="visible-xs-block" data-bind="foreach: $data">
+                        <button class='btn btn-default btn-x-small' data-bind='enable: parent.canPlay(), css: {active: isClicked()}, click: show, event: { contextmenu: flag, taphold: flag }'>
+                           <span data-bind="if: isClicked">
+                              <span data-bind="if: content() == 0">&nbsp;</span>
+                              <span data-bind="ifnot: content() == 0">
+                                 <span data-bind="html: content"></span>
+                              </span>
+                           </span>
+                           <span data-bind='if: isFlagged'>
+                              <span data-bind="if: isMine() || !parent.hasLost()">
+                                 <i class="fa fa-flag"></i>
+                              </span>
+                              <span data-bind="if: parent.hasLost() && !isMine()">
+                                 <i class="fa fa-times"></i>
+                              </span>
+                           </span>
+                           <span data-bind='if: clickable'>&nbsp;</span>
+                        </button>
+                     </div>
+                  </div>
+                  <div style="padding: 10px;">
+                     <div data-bind="if: hasWon">You win!</div>
+                     <div data-bind="if: hasLost">You lose!</div>
+                     <button class='btn btn-primary' data-bind="click: reset">Replay</button>
+                  </div>
+               </div>
             </div>
          </div>
 

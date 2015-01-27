@@ -82,7 +82,7 @@
                   <span data-bind='if: clickable'>&nbsp;</span>
                </button>
             </div>
-            <div class="visible-xs-block col-xs-12" style="margin: -2px" data-bind="foreach: $data">
+            <div class="visible-xs-block col-xs-12" data-bind="foreach: $data">
                <button class='btn btn-default btn-x-small' data-bind='enable: parent.canPlay(), css: {active: isClicked()}, click: show, event: { contextmenu: flag, taphold: flag }'>
                   <span data-bind="if: isClicked">
                      <span data-bind="if: content() == 0">&nbsp;</span>
