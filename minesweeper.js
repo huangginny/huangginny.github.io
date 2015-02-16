@@ -108,6 +108,9 @@ $(function () {
 		self.minesLeft = ko.computed(function() {
 			return self.numOfMines() - self.numOfFlags();
 		});
+
+		self.lostFacts = FACTS.slice(0, 5);
+		self.winFacts = ko.observableArray(FACTS.slice(0, self.numOfMines() / 2));
 		
 		self.chooseMines = [];
 		for (var m = 30; m <= 50; m += 2) {
@@ -130,6 +133,20 @@ $(function () {
 			Initialize mines and contents.
 		 */
 		self.startGame = function(x, y) {
+			var randoms = [];
+			var rand = Math.floor(Math.random() * 24);
+			for (i = 0; i < (self.numOfMines() / 2); i++) {
+				while (randoms.indexOf(rand) > -1) {
+					rand = Math.floor(Math.random() * 24); 					
+				}
+				randoms.push(rand);
+			}
+			randoms.sort(function(a, b){return a-b}); 
+			for (r in randoms) {
+				var ind = randoms[r];
+				self.winFacts.push(FACTS[ind]);
+			}
+
 			var count = 0;
 			while (count < self.numOfMines()) {
 				var x_mine = Math.floor(Math.random() * GRIDS_PER_LINE); 
@@ -184,10 +201,11 @@ $(function () {
 			return !stop;
 		})
 
-
 		self.reset = function() {
+			$('#minesweeper-facts').modal('hide');
 			self.newBoard();
 			self.numOfFlags(0);
+			self.winFacts([]);
 			self.isPlaying(false);
 			self.hasLost(false);
 		};
@@ -195,6 +213,11 @@ $(function () {
 	};
 
 	var game = new GameModel();
+	game.canPlay.subscribe(function(newValue){
+		if (!newValue) {
+			$('#minesweeper-facts').modal('show');
+		}
+	});
 	game.reset();
 	ko.applyBindings(game, document.getElementById('minesweeper'));
 

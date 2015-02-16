@@ -144,6 +144,48 @@ var TIMELINE = [
 }
 ];
 
+/* Facts about me */
+var FACTS = [
+	"I am the biggest Harry Potter fan a lot of people have ever seen.",
+	"My favorite music is usually from movie soundtracks, " + 
+		"such as the opening theme of <i>The Imitation Game</i>",
+	"My favorite city in the world is Hong Kong, and my favorite in the United States " + 
+		"is Washington D.C.",
+	"I indeed took my English name, \"Ginny\", from the Harry Potter series.",
+	"I own a Nikon D700 and usually make pretty good use of it. Checkout my Flickr!",
+	"I love solo-traveling. once solo-travelled to and couchsurfed Yucatan Peninsula in Mexico.",
+	"I always want to have really long hair, but for some reasons they are still always at shoulder length.",
+	"I started college thinking of majoring in Journalism, but quitted because I felt that it " + 
+		"didn't fit me, and also because my English was not good enough.",
+	"I passed my AP calculus before college, thinking happily that I would never have to " + 
+		"take another Math class again. Two years later I became a Math major...",
+	"I play piano. The hardest piece I have ever played is <i>Moonlight Sonata</i> by Beethoven. I presented this " +
+		"piece in my graduation piano recital, in which I performed alongside my good friend Christy.",
+	"Really love to use public transportation for some reason. My favorite is the underground.",
+	"I'm not a sports person. I'm too clumsy...",
+	"I'm pretty good at Origami. I do this a lot with my girl friends in elementary school.",
+	"I love to buy different kinds of sunglasses.",
+	"I love sending and receiving postcards.",
+	"The first time I came to the States is in July 2005 with my best friend and a bunch of other " + 
+		"middle school and high school students in Shenzhen. For one week, I was hosted by a family in " + 
+		"Lockhaven, Pennsylvania. That was one of my best trips ever, and I am still missing the time and " + 
+		"people I met when I was there.",
+	"Extremely lazy. On weekends I can just lie on the bed all day.",
+	"I enjoy working in the midnight. For some reason, that's my most efficient working time.",
+	"I once drank Coco Cola very much (about half a liter a day.) I can even distinguish Coca Cola and Pepsi, " + 
+		"Coke that's stored in a can and that's stored in a glass bottle. I quitted three months ago, after " +
+		"realizing that it made my stomach hurt a lot.",
+	"On Pottermore (official Harry Potter fansite ran by J.K Rowling) I was sorted into Slytherin.",
+	"I have a habit of always re-watching the movies and TV series I've watched in my childhood. Recently I " + 
+		"am enjoying <i>A Little Princess</i> directed by Alfonso Cuaron in 1995.",
+	"When I talk, I talk a lot. I'm trying to get rid of the bad habit of interrupting others when they talk.",
+	"I don't have a lot of friends. But most of my friends are really close to me.",
+	"When I discover a song that I really love, I would be repeating it for like 20 times a day for a whole " + 
+		"week... that is, until I never want to hear it in my life again. Same goes with dishes of restaurants " + 
+		"I like.",
+	"NA"
+];
+
 /* Social network */
 var SNS_LINKS = [
 {

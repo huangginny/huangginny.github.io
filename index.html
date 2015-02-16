@@ -219,10 +219,42 @@
                         </button>
                      </div>
                   </div>
-                  <div style="padding: 10px;">
-                     <div data-bind="if: hasWon">You win!</div>
-                     <div data-bind="if: hasLost">You lose!</div>
-                     <button class='btn btn-primary' data-bind="click: reset">Replay</button>
+                  <!-- Minesweeper results -->
+                  <div class="modal fade" id="minesweeper-facts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                           </button>
+                           <div data-bind="if: hasWon">
+                              <h4 class="modal-title" id="myModalLabel">You win!</h4>
+                           </div>
+                           <div data-bind="if: hasLost">
+                              <h4 class="modal-title" id="myModalLabel">You lose...</h4>
+                           </div>
+                        </div>
+                        <div class="modal-body">
+                           <div data-bind="if: hasWon">
+                              <p>
+                                 You have found <span data-bind="text: numOfMines"></span> mines! In reward, here are <span data-bind="text: numOfMines() / 2"></span> things about me that I'm letting you know.
+                              </p>
+                              <ol data-bind="foreach: winFacts">
+                                 <li data-bind="html: $data"></li>
+                              </ol>
+                           </div>
+                           <div data-bind="if: hasLost">
+                              <p>
+                                 As a reward to your participation, though, I'd like you to know five things about me before you hit "replay". Check it out...
+                              </p>
+                              <ol data-bind="foreach: lostFacts">
+                                 <li data-bind="html: $data"></li>
+                              </ol>
+                           </div>
+                           <button class='btn btn-primary' data-bind="click: reset">Replay</button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                </div>
             </div>
