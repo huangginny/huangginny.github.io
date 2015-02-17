@@ -134,14 +134,15 @@ $(function () {
 		 */
 		self.startGame = function(x, y) {
 			var randoms = [];
-			var rand = Math.floor(Math.random() * 24);
-			for (i = 0; i < (self.numOfMines() / 2); i++) {
-				while (randoms.indexOf(rand) > -1) {
-					rand = Math.floor(Math.random() * 24); 					
-				}
-				randoms.push(rand);
+			for (i = 0; i < 25; i++) {
+				randoms.push(i);
 			}
-			randoms.sort(function(a, b){return a-b}); 
+			len = 25;
+			for (i = 0; i < ((50 - self.numOfMines()) / 2); i++) {
+				rmIndex = Math.floor(Math.random() * len);
+				randoms.splice(rmIndex, 1);
+				len -= 1;
+			}
 			for (r in randoms) {
 				var ind = randoms[r];
 				self.winFacts.push(FACTS[ind]);

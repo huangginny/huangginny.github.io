@@ -8,6 +8,7 @@
 
 .section .sectionBody {
 	display: none;
+	padding-bottom: 50px;
 }
 
 .fa {
