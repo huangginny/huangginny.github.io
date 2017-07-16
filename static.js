@@ -1,9 +1,33 @@
 /* Timeline */
 var TIMELINE = [
 {
+	'time': '2016.11',
+	'event': '<i>Fantastic Beasts and Where to Find Them</i> is on in theaters',
+	'milestone': false,
+	'details': ko.observableArray([])
+},
+{
+	'time': '2016.9',
+	'event': 'Relocated to Beijing, China',
+	'milestone': false,
+	'details': ko.observableArray([])
+},
+{
+	'time': '2016.7',
+	'event': 'Took a selfie with Daniel Radcliffe!',
+	'milestone': true,
+	'details': ko.observableArray([])
+},
+{
+	'time': '2015.5',
+	'event': 'Starts my first fulltime job at FreeWheel in the Big Apple, at the heart of Manhattan',
+	'milestone': true,
+	'details': ko.observableArray([])
+},
+{
 	'time': '2014.9',
 	'event': 'Starts internship at Center For Open Science in Charlottesville, VA',
-	'milestone': true,
+	'milestone': false,
 	'details': ko.observableArray([])
 },
 {
@@ -48,7 +72,7 @@ var TIMELINE = [
 	'time': '2011.7',
 	'event': 'Movie <i>Harry Potter and the Deathly Hallows - Part 2</i> '
 	+ 'is released, marking the end of the Potter era',
-	'milestone': true,
+	'milestone': false,
 	'details': ko.observableArray([])
 },
 {
@@ -195,7 +219,7 @@ var SNS_LINKS = [
 },
 {
 	'name': 'Twitter',
-	'url': 'https://twitter.com/intent/tweet?screen_name=Orz_zai',
+	'url': 'https://twitter.com/intent/tweet?screen_name=Orzzai',
 	'icon': '<i class="fa fa-twitter fa-2x">'
 },
 {

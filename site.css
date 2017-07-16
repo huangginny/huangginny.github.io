@@ -2,8 +2,12 @@
 .section {
 	border-bottom-width: 3px;
 	border-bottom-style: solid;
-	border-bottom-color: gold;
+	border-bottom-color: midnightblue;
 	padding: 10px;
+}
+
+.sectionHead {
+	color: midnightblue;
 }
 
 .section .sectionBody {
@@ -12,11 +16,11 @@
 }
 
 .fa {
-	color: DimGray;
+	color: dimgray;
 }
 
 .sns .fa:hover {
-	color: gold;
+	color: midnightblue;
 }
 
 .toTop {
@@ -28,8 +32,8 @@
 
 /* HEADER */
 .bg {
-  background: url("./pics/cuba.jpg") no-repeat center center;
-  background-size: 100% 100%;
+  background: url("./pics/forbidden_city_startrail.jpg") no-repeat center center;
+  background-size: 100%;
   border-radius: 50px;
   width: 100%;
   z-index: -1;
@@ -46,7 +50,7 @@
 #head h1 {
     font-family: "Georgia", serif;
     font-weight: bold;
-    color: DimGray;
+    color: snow;
 }
 
 #head .intro {
@@ -55,22 +59,23 @@
 }
 
 #head .intro p {
+	color: ghostwhite;
 	font-size: 14pt;
 }
 
 #head button {
 	padding-top: 20px;
-	color: dimGray;
+	color: snow;
 	font-weight: bold;
 	font-family: "Georgia", serif;
 	font-size: 15pt;
-	text-shadow: 0 0 2px lightyellow;
+	text-shadow: 0 0 2px midnightblue;
 }
 
 #head button:hover{
-	color: lightyellow;
+	color: midnightblue;
 	background-color: transparent;
-	text-shadow: 0 0 2px dimGray;
+	text-shadow: 0 0 2px snow;
 }
 
 /* TIMELINE SECTION */
@@ -95,7 +100,7 @@
 
 
 .fa-question-circle:hover {
-	color: gold;
+	color: midnightblue;
 }
 
 #aboutSection span.small {

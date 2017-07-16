@@ -25,7 +25,7 @@ $(function(){
 		var col = head.css("color");
 
 		head.hover(function() {
-			$(this).css("color", "#FFCC00");
+			$(this).css("color", "dimgray");
 		},function() {
 			$(this).css("color", col);
 		});
