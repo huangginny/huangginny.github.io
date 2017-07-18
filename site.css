@@ -16,8 +16,8 @@
 
 /* HEADER */
 .bg {
-  background: url("./pics/forbidden_city_startrail.jpg") no-repeat center center;
-  background-size: 100%;
+  background: url("./pics/fbc.jpg") no-repeat center center;
+  background-size: cover;
   border-radius: 50px;
   width: 100%;
   z-index: -1;
