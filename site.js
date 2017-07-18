@@ -2,16 +2,27 @@ $(function(){
 
 	$.mobile.ajaxEnabled = false;
 	$.mobile.loading().hide();
+	$('.section').hide();
 
 	/* --- HEADER --- */
 	$("#head button").each(function() {
 		$(this).click(function() {
+			// Change button color
+			$('#head button').css("color", "snow");
+			$('#head button').css("text-shadow", "0 0 2px midnightblue");
+			$(this).css("color", "midnightblue");
+			$(this).css("text-shadow", "0 0 2px snow");
+
+			// Find section
+			$('.section').hide();
 			var name = $(this).attr('name');
 			var sectionId = "#" + name;
-			$('html, body').animate({
+
+			// Show and scroll to section
+    		$(sectionId).show();
+    		$('html, body').animate({
         		scrollTop: $(sectionId).offset().top
-    		});
-    		$(sectionId).children('.sectionBody').show();
+			});
 		});
 	});
 
@@ -19,45 +30,5 @@ $(function(){
 	ko.applyBindings({'timeline': TIMELINE}, document.getElementById('tlSection'));
 	ko.applyBindings({'links': SNS_LINKS}, document.getElementById('contactSection'));
 
-	$(".section").each(function() {
-		var head = $(this).children('.sectionHead');
-		var body = $(this).children('.sectionBody');
-		var col = head.css("color");
-
-		head.hover(function() {
-			$(this).css("color", "dimgray");
-		},function() {
-			$(this).css("color", col);
-		});
-
-		head.click(function(){
-			head.animate({color:'white'}, 'fast');
-			body.animate({height:'toggle'}, 'slow');
-			head.animate({color: col}, 'fast');
-		});
-	});
-
   	$('[data-toggle="tooltip"]').tooltip();
-
-  	/* --- BOTTOM --- */
-	/*
-	 * From StackOverflow: http://stackoverflow.com/questions/14249998/jquery-back-to-top/#answer-14250025
-	 */
-	$(window).scroll(function() {
-		if ($(this).scrollTop()) {
-			$('.toTop').fadeIn();
-		} else {
-			$('.toTop').fadeOut();
-		}
-	});
-
-	$(".toTop").click(function () {
-   		//1 second of animation time
-   		//html works for FFX but not Chrome
-   		//body works for Chrome but not FFX
-   		//This strange selector seems to work universally
-   		$(".sectionBody").hide(1000);
-   		$("html, body").animate({scrollTop: 0});
-	});
-
 });

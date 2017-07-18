@@ -25,7 +25,7 @@
 <body>
    <div class="container">
       <div class="bg">
-         <div id="head" class="jumbotron">
+         <div id="head" class="jumbotron" style="border-radius: 50px">
             <h1>Ginny Huang</h1>
             <div class="intro hidden-xs">
                <p>Hi, I am Ginny Huang. I got my Bachelor's Degree in Computer Science from Washington and Lee University in Lexington, VA in May 2014. After my seven-month internship in Center for Open Science in Charlottesville, VA, I started working as a Software Developer for FreeWheel until now, first in New York City, now in Beijing, China.
@@ -58,177 +58,160 @@
 
          <!-- ###### TIMELINE ######-->
          <div id="tlSection" class="col-md-12 section">
-            <div class="sectionHead">
-               <br/>
-               <h3>Timeline</h3>
-            </div>
-            <div class="sectionBody">
-               <p class="col-md-12">
-                  This is the most boring way to tell you about myself... Nevertheless, it's simple and self-explanatory.
-               </p>
-               <div data-bind="foreach: timeline">
-                  <div data-bind="css: {'row': true, 'milestone': milestone}">
-                     <div class="col-xs-12 col-sm-3">
-                        <span class="hidden-xs pull-right" data-bind="text: time"></span>
-                        <span class="visible-xs-inline pull-left" data-bind="text: time"></span>
-                     </div>
-                     <div class="col-xs-12 col-sm-9">
-                        <span data-bind="html: event"></span>
-                     </div>
-                     <span class="visible-xs-block">&nbsp;<br/></span>
+            <p class="col-md-12">
+               This is the most boring way to tell you about myself... Nevertheless, it's simple and self-explanatory.
+            </p>
+            <div data-bind="foreach: timeline">
+               <div data-bind="css: {'row': true, 'milestone': milestone}">
+                  <div class="col-xs-12 col-sm-3">
+                     <span class="hidden-xs pull-right" data-bind="text: time"></span>
+                     <span class="visible-xs-inline pull-left" data-bind="text: time"></span>
                   </div>
+                  <div class="col-xs-12 col-sm-9">
+                     <span data-bind="html: event"></span>
+                  </div>
+                  <span class="visible-xs-block">&nbsp;<br/></span>
                </div>
             </div>
          </div>
 
-
          <!-- ###### PROJECTS ###### -->
          <div id="projectSection" class="col-md-12 section">
-            <div class="sectionHead">
-               <br/>
-               <h3>Technical</h3>
+            <div id="iOS">
             </div>
-            <div class="sectionBody">
-               <div id="iOS">
+            <div id="web">
+               <div class="project project-overview">
+                  <div class="page-header" style="margin-top:0px;">
+                     <h4>Overview</h4>
+                  </div>
+                  <ul class="col-xs-12">
+                     <li class="col-xs-12">
+                        <div class="col-sm-3">
+                           <b>Languages: </b>
+                        </div>
+                        <div class="col-sm-9">
+                           <span class="label label-success">Python</span>
+                           <span class="label label-primary">HTML</span>
+                           <span class="label label-danger">CSS</span>
+                           <span class="label label-warning">JavaScript</span>
+                        </div>
+                     </li>
+                     <li class="col-xs-12">
+                        <div class="col-sm-3">
+                           <b>Frameworks and libraries: </b>
+                        </div>
+                        <div class="col-sm-9">
+                           <span class="label label-default">Python Flask Microframework</span>
+                           <span class="label label-info">Knockout.js</span>
+                        </div>
+                     </li>
+                  </ul>
                </div>
-               <div id="web">
-                  <div class="project project-overview">
-                     <div class="page-header" style="margin-top:0px;">
-                        <h4>Overview</h4>
-                     </div>
-                     <ul class="col-xs-12">
-                        <li class="col-xs-12">
-                           <div class="col-sm-3">
-                              <b>Languages: </b>
-                           </div>
-                           <div class="col-sm-9">
-                              <span class="label label-success">Python</span>
-                              <span class="label label-primary">HTML</span>
-                              <span class="label label-danger">CSS</span>
-                              <span class="label label-warning">JavaScript</span>
-                           </div>
+               <div class="project">
+                  <div class="page-header">
+                     <h4>Ancient Graffiti Project <small class="pull-right">2013.5</small></h4>
+                  </div>
+                  <div class="col-md-6">
+                     <p>School projects probably shouldn't matter since I'm now a professional, not a new grad. However I still want to introduce this awesome and still ongoing <a href="http://ancientgraffiti.wlu.edu/">Ancient Graffiti Project</a> I've taken part in when I was in my Junior year in college, since this is the first web application I have implemented :)</p>
+                     <p>
+                        The Ancient Graffiti Project is a website that provides a search engine for locating and studying graffiti of the early Roman empire from the cities of Pompeii and Herculaneum. I am one of the four developers that have started implementing the infrastructure, in May 2013. Our <a href="http://servo.cs.wlu.edu/Graffiti/search">search engine</a> allows three different types of searches.
+                     </p>
+                     <ul>
+                        <li>
+                           You can search for graffiti by location, selecting either the pull-down menu, or by clicking on the map, or
                         </li>
-                        <li class="col-xs-12">
-                           <div class="col-sm-3">
-                              <b>Frameworks and libraries: </b>
-                           </div>
-                           <div class="col-sm-9">
-                              <span class="label label-default">Python Flask Microframework</span>
-                              <span class="label label-info">Knockout.js</span>
-                           </div>
+                        <li>
+                           You can search specifically for graffiti drawings by choosing the class of drawing that interests you, or
+                        </li>
+                        <li>
+                           You can search for a specific word or phrase and find where it occurs within the ancient city.
                         </li>
                      </ul>
+                     <p>
+                        I have shown how to use the "map search" in the video clip, and you're welcome to explore the rest of the project and functionalities yourself. Currently, it has a lot of new features than when I am working on it.
+                     </p>
+                     <p>
+                        In this project, my main responsibility is to carve out the design of the website, so I dealt much with HTML, CSS and box models.
+                     </p>
                   </div>
-                  <div class="project">
-                     <div class="page-header">
-                        <h4>Ancient Graffiti Project <small class="pull-right">2013.5</small></h4>
-                     </div>
-                     <div class="col-md-6">
-                        <p>School projects probably shouldn't matter since I'm now a professional, not a new grad. However I still want to introduce this awesome and still ongoing <a href="http://ancientgraffiti.wlu.edu/">Ancient Graffiti Project</a> I've taken part in when I was in my Junior year in college, since this is the first web application I have implemented :)</p>
-                        <p>
-                           The Ancient Graffiti Project is a website that provides a search engine for locating and studying graffiti of the early Roman empire from the cities of Pompeii and Herculaneum. I am one of the four developers that have started implementing the infrastructure, in May 2013. Our <a href="http://servo.cs.wlu.edu/Graffiti/search">search engine</a> allows three different types of searches.
-                        </p>
-                        <ul>
-                           <li>
-                              You can search for graffiti by location, selecting either the pull-down menu, or by clicking on the map, or
-                           </li>
-                           <li>
-                              You can search specifically for graffiti drawings by choosing the class of drawing that interests you, or
-                           </li>
-                           <li>
-                              You can search for a specific word or phrase and find where it occurs within the ancient city.
-                           </li>
-                        </ul>
-                        <p>
-                           I have shown how to use the "map search" in the video clip, and you're welcome to explore the rest of the project and functionalities yourself. Currently, it has a lot of new features than when I am working on it.
-                        </p>
-                        <p>
-                           In this project, my main responsibility is to carve out the design of the website, so I dealt much with HTML, CSS and box models.
-                        </p>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="embed-responsive embed-responsive-16by9">
-                          <embed class="embed-responsive-item" src="./pics/graffiti.mov" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/" scale="tofit">
-                          </div>
+                  <div class="col-md-6">
+                     <div class="embed-responsive embed-responsive-16by9">
+                       <embed class="embed-responsive-item" src="./pics/graffiti.mov" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/" scale="tofit">
                        </div>
                     </div>
                  </div>
               </div>
-               <div id="java">
-              </div>
            </div>
+            <div id="java">
+           </div>
+         </div>
 
          <!-- ###### MISCELLANEOUS ######-->
          <div id="aboutSection" class="col-md-12 section">
-            <div class="sectionHead">
-               <br/>
-               <h3>Miscellaneous</h3>
+            <div class="row">
+               <p class="col-xs-12" style="font-size: 10pt; font-weight: bold;">
+                  Go and flag the mines and I'll tell you some <del>dirty</del> details about me!
+               </p>
             </div>
-            <div class="sectionBody">
-               <div class="row">
-                  <p class="col-xs-12" style="font-size: 10pt; font-weight: bold;">
-                     Go and flag the mines and I'll tell you some <del>dirty</del> details about me!
-                  </p>
+            <div id="minesweeper">
+               <div style='padding: 20px;'>
+                  <div class="pull-right">
+                     <a type="button" class="btn btn-link" data-toggle="modal" data-target="#minesweeper-rules">
+                        <i class="fa fa-3x fa-question-circle"></i>
+                     </a>
+                     <button class='btn btn-primary' data-bind="click: reset">Replay</button>
+                  </div>
+                  Total number of mines: 
+                  <select class="selectpicker" data-role="none" data-bind="disable: isPlaying, options: chooseMines, value: numOfMines"></select>
+                  <br/>
+                  <span>Remaining mines: 
+                     <span data-bind="text: minesLeft"></span>
+                  </span>
                </div>
-               <div id="minesweeper">
-                  <div style='padding: 20px;'>
-                     <div class="pull-right">
-                        <a type="button" class="btn btn-link" data-toggle="modal" data-target="#minesweeper-rules">
-                           <i class="fa fa-3x fa-question-circle"></i>
-                        </a>
-                        <button class='btn btn-primary' data-bind="click: reset">Replay</button>
-                     </div>
-                     Total number of mines: 
-                     <select class="selectpicker" data-role="none" data-bind="disable: isPlaying, options: chooseMines, value: numOfMines"></select>
-                     <br/>
-                     <span>Remaining mines: 
-                        <span data-bind="text: minesLeft"></span>
-                     </span>
+               <div data-bind="foreach: board" align="center">
+                  <div class="hidden-xs" data-bind="foreach: $data">
+                     <button class='btn btn-default btn-small' data-bind='enable: parent.canPlay(), css: {active: isClicked()}, click: show, event: { contextmenu: flag, taphold: flag }'>
+                        <span data-bind="if: isClicked">
+                           <span data-bind="if: content() == 0">&nbsp;</span>
+                           <span data-bind="ifnot: content() == 0">
+                              <span data-bind="html: content"></span>
+                           </span>
+                        </span>
+                        <span data-bind='if: isFlagged'>
+                           <span data-bind="if: isMine() || !parent.hasLost()">
+                              <i class="fa fa-flag"></i>
+                           </span>
+                           <span data-bind="if: parent.hasLost() && !isMine()">
+                              <i class="fa fa-times"></i>
+                           </span>
+                        </span>
+                        <span data-bind='if: clickable'>&nbsp;</span>
+                     </button>
                   </div>
-                  <div data-bind="foreach: board" align="center">
-                     <div class="hidden-xs" data-bind="foreach: $data">
-                        <button class='btn btn-default btn-small' data-bind='enable: parent.canPlay(), css: {active: isClicked()}, click: show, event: { contextmenu: flag, taphold: flag }'>
-                           <span data-bind="if: isClicked">
-                              <span data-bind="if: content() == 0">&nbsp;</span>
-                              <span data-bind="ifnot: content() == 0">
-                                 <span data-bind="html: content"></span>
-                              </span>
+                  <div class="visible-xs-block" data-bind="foreach: $data">
+                     <button class='btn btn-default btn-x-small' data-bind='enable: parent.canPlay(), css: {active: isClicked()}, click: show, event: { contextmenu: flag, taphold: flag }'>
+                        <span data-bind="if: isClicked">
+                           <span data-bind="if: content() == 0">&nbsp;</span>
+                           <span data-bind="ifnot: content() == 0">
+                              <span data-bind="html: content"></span>
                            </span>
-                           <span data-bind='if: isFlagged'>
-                              <span data-bind="if: isMine() || !parent.hasLost()">
-                                 <i class="fa fa-flag"></i>
-                              </span>
-                              <span data-bind="if: parent.hasLost() && !isMine()">
-                                 <i class="fa fa-times"></i>
-                              </span>
+                        </span>
+                        <span data-bind='if: isFlagged'>
+                           <span data-bind="if: isMine() || !parent.hasLost()">
+                              <i class="fa fa-flag"></i>
                            </span>
-                           <span data-bind='if: clickable'>&nbsp;</span>
-                        </button>
-                     </div>
-                     <div class="visible-xs-block" data-bind="foreach: $data">
-                        <button class='btn btn-default btn-x-small' data-bind='enable: parent.canPlay(), css: {active: isClicked()}, click: show, event: { contextmenu: flag, taphold: flag }'>
-                           <span data-bind="if: isClicked">
-                              <span data-bind="if: content() == 0">&nbsp;</span>
-                              <span data-bind="ifnot: content() == 0">
-                                 <span data-bind="html: content"></span>
-                              </span>
+                           <span data-bind="if: parent.hasLost() && !isMine()">
+                              <i class="fa fa-times"></i>
                            </span>
-                           <span data-bind='if: isFlagged'>
-                              <span data-bind="if: isMine() || !parent.hasLost()">
-                                 <i class="fa fa-flag"></i>
-                              </span>
-                              <span data-bind="if: parent.hasLost() && !isMine()">
-                                 <i class="fa fa-times"></i>
-                              </span>
-                           </span>
-                           <span data-bind='if: clickable'>&nbsp;</span>
-                        </button>
-                     </div>
+                        </span>
+                        <span data-bind='if: clickable'>&nbsp;</span>
+                     </button>
                   </div>
-                  <!-- Minesweeper results -->
-                  <div class="modal fade" id="minesweeper-facts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
+               </div>
+               <!-- Minesweeper results -->
+               <div class="modal fade" id="minesweeper-facts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                 <div class="modal-dialog">
+                     <div class="modal-content">
                         <div class="modal-header">
                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
@@ -260,8 +243,7 @@
                            <br/>
                            <button class='btn btn-primary btn-block' data-bind="click: reset">Replay</button>
                         </div>
-                      </div>
-                    </div>
+                     </div>
                   </div>
                </div>
             </div>
@@ -269,36 +251,30 @@
 
          <!-- ###### CONTACT ###### -->
          <div id="contactSection" class="col-md-12 section">
-            <div class="sectionHead">
-               <br/>
-               <h3>Contact Me</h3>
-            </div>
-            <div class="sectionBody">
-               <div class="row">
-                  <div class="col-md-6" align="center">
-                     <br/>
-                     <ul class="list-group">
-                        <li class="list-group-item">
-                           <i class="fa fa-envelope fa-lg"></i>&nbsp;
-                           <a href="mailto: jh92710@gmail.com" target="_blank">
-                              jh92710@gmail.com
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="col-md-6" align="center">
-                     <br/>
-                     <div class="sns row" data-bind="foreach: links">
-                        <a data-bind="html: icon, attr: { href: url, title: name }" data-toggle="tooltip" data-placement="top" target="_blank">
+            <div class="row">
+               <div class="col-md-6" align="center">
+                  <br/>
+                  <ul class="list-group">
+                     <li class="list-group-item">
+                        <i class="fa fa-envelope fa-lg"></i>&nbsp;
+                        <a href="mailto: jh92710@gmail.com" target="_blank">
+                           jh92710@gmail.com
                         </a>
-                     </div>
+                     </li>
+                  </ul>
+               </div>
+               <div class="col-md-6" align="center">
+                  <br/>
+                  <div class="sns row" data-bind="foreach: links">
+                     <a data-bind="html: icon, attr: { href: url, title: name }" data-toggle="tooltip" data-placement="top" target="_blank">
+                     </a>
                   </div>
                </div>
-               <div class="row col-lg-12">
-                  <p>
-                     Feedbacks on this page are sincerely appreciated. If you would like to provide some suggestions and improvements, please <a href="https://github.com/huangginny/huangginny.github.io/issues"> <i class="fa fa-exclamation-circle" target="_blank"></i> report it as an issue,</a> or create another branch, make changes, push and I will merge the branches.</a>
-                  </p>
-               </div>
+            </div>
+            <div class="row col-lg-12">
+               <p>
+                  Feedbacks on this page are sincerely appreciated. If you would like to provide some suggestions and improvements, please <a href="https://github.com/huangginny/huangginny.github.io/issues"> <i class="fa fa-exclamation-circle" target="_blank"></i> report it as an issue,</a> or create another branch, make changes, push and I will merge the branches.</a>
+               </p>
             </div>
          </div>
          <!-- ####### Foot ####### -->
@@ -306,7 +282,7 @@
             <br/>
             <hr/>
             <p>
-               <cite>Page by Ginny Huang on 28 June, 2013. Last updated on 16 July, 2017.</cite>
+               <cite>Page by Ginny Huang on 28 June, 2013. Last updated on 18 July, 2017.</cite>
             </p>
             <br/>
          </div>
@@ -333,10 +309,5 @@
     </div>
   </div>
 </div>
-
-<!-- ### Back to Top Panel -->
-<button class="toTop btn btn-default btn-sm">
-   Back to top &nbsp; <i class="fa fa-arrow-up"></i>
-</button>
 
 </body>

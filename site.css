@@ -1,20 +1,4 @@
 /* PAGE */
-.section {
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-	border-bottom-color: midnightblue;
-	padding: 10px;
-}
-
-.sectionHead {
-	color: midnightblue;
-}
-
-.section .sectionBody {
-	display: none;
-	padding-bottom: 50px;
-}
-
 .fa {
 	color: dimgray;
 }
@@ -40,7 +24,7 @@
 }
 
 .jumbotron {
-  background:rgba(255,255,255,0.5);
+  background:rgba(0, 0, 0, 0.4);
 }
 
 #head {
@@ -59,7 +43,7 @@
 }
 
 #head .intro p {
-	color: ghostwhite;
+	color: snow;
 	font-size: 14pt;
 }
 

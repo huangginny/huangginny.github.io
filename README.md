@@ -12,7 +12,7 @@ be out of date. I am going to update it asap.
 
 Next steps: 
 
-1. The "Personal" field will let us play a game (either answering questions about me or play Minesweeper)
-2. Project field would be divided into three parts: Java, Web and Mobile (Stacked nav-pills?)
+- Project field would be divided into three parts: Java, Web and Mobile
+- Make it a blog... probably.
 
 This page is always underconstruction.
