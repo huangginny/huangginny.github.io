@@ -1,14 +1,13 @@
 /* Timeline */
 var TIMELINE = [
 {
-	'time': '2017.11',
-	'event': 'Back in New York as a Video Integration engineer, team mascot, and a party master',
+	'time': '2018.7',
+	'event': '<i>National Geographic</i> published my photograph of Twelve Apostles, Australia',
 	'milestone': false,
 	'details': ko.observableArray([])
-},
-{
-	'time': '2017.10',
-	'event': 'Was in Israel for a week',
+},{
+	'time': '2017.11',
+	'event': 'Back in New York as a Video Integration engineer, team mascot, and a party master',
 	'milestone': false,
 	'details': ko.observableArray([])
 },
@@ -51,7 +50,7 @@ var TIMELINE = [
 },
 {
 	'time': '2013.4',
-	'event': 'Goes to Cuba with Christy Cui',
+	'event': 'Goes to Cuba with Christy Cui -- first time traveling abroad... with no money',
 	'milestone': true,
 	'details': ko.observableArray([])
 },
@@ -64,20 +63,13 @@ var TIMELINE = [
 },
 {
 	'time': '2011.10',
-	'event': 'Starts work study at Phonathon',
+	'event': 'Starts work study at Phonathon in which I call alumni and parents for college Annual Fund',
 	'milestone': false,
 	'details': ko.observableArray([])
 },
 {
 	'time': '2011.10',
 	'event': 'Writes my first computer program in Python',
-	'milestone': false,
-	'details': ko.observableArray([])
-},
-{
-	'time': '2011.7',
-	'event': 'Movie <i>Harry Potter and the Deathly Hallows - Part 2</i> '
-	+ 'is released, marking the end of the Potter era',
 	'milestone': false,
 	'details': ko.observableArray([])
 },
@@ -91,12 +83,6 @@ var TIMELINE = [
 	'time': '2010.8',
 	'event': 'Leaves for United States, and enrolls in Washington and Lee University in Lexington, VA',
 	'milestone': true,
-	'details': ko.observableArray([])
-},
-{
-	'time': '2010.6',
-	'event': 'Graduates from Shenzhen Foreign Languages School',
-	'milestone': false,
 	'details': ko.observableArray([])
 },
 {
@@ -114,7 +100,7 @@ var TIMELINE = [
 },
 {
 	'time': '2007.7',
-	'event': 'The book <i>Harry Potter and the Deathly Hallows</i> is published',
+	'event': 'The last Harry Potter book, <i>Deathly Hallows</i> is published',
 	'milestone': true,
 	'details': ko.observableArray([])
 },
@@ -131,20 +117,8 @@ var TIMELINE = [
 	'details': ko.observableArray([])
 },
 {
-	'time': '2004.6',
-	'event': 'Graduates from elementary school',
-	'milestone': false,
-	'details': ko.observableArray([])
-},
-{
-	'time': '2004.6',
-	'event': 'Passes the test that I have performed most outstandingly in my life',
-	'milestone': false,
-	'details': ko.observableArray([])
-},
-{
 	'time': '1999.?',
-	'event': "Reads <i>Harry Potter and the Philosopher's Stone</i>",
+	'event': "Reads my first Harry Potter book, <i>Philosopher's Stone</i>",
 	'milestone': true,
 	'details': ko.observableArray([])
 },
@@ -194,7 +168,8 @@ var FACTS = [
 	"Pompeii, Italy is currently on the top of my to-go list. Before Oct 2017 it was Jerusalem, Israel.",
 	"Not a sports person because of my clumsiness, but I like hiking a lot.",
 	"I'm pretty good at Origami. I do this a lot with my girl friends in elementary school.",
-	"Loves to buy different kinds of sunglasses.",
+	"Although never officially diagnosed I believe I'm an Aspie -- I identify with 90% of the symptoms " +
+		"mentioned by Tony Attwoods <i>A Complete Guide to Asperger's Syndrome</i>, including not talking until five",
 	"Loves sending and receiving postcards.",
 	"The first time I came to the States is in July 2005 with my best friend and a bunch of other " + 
 		"middle school and high school students in Shenzhen. For one week, I was hosted by a family in " + 
@@ -203,7 +178,7 @@ var FACTS = [
 	"Extremely lazy. On weekends I can just lie on the bed all day.",
 	"Enjoys working in the midnight. For some reason, that's my most efficient working time.",
 	"I once drank Coco Cola very much (about half a liter a day.) I can even distinguish Coca Cola and Pepsi, " + 
-		"Coke that's stored in a can and that's stored in a glass bottle. I quitted three months ago, after " +
+		"Coke that's stored in a can and that's stored in a glass bottle. I quitted after " +
 		"realizing that it made my stomach hurt a lot.",
 	"On Pottermore (official Harry Potter fansite ran by J.K Rowling) I was sorted into Slytherin.",
 	"I have a habit of always re-watching the movies and TV series I've watched in my childhood. Recently I " + 
@@ -213,7 +188,7 @@ var FACTS = [
 	"When I discover a song that I really love, I would be repeating it for like 20 times a day for a whole " + 
 		"week... that is, until I never want to hear it in my life again. Same goes with dishes of restaurants " + 
 		"I like.",
-	"Mojito lover. Currently exploring nice speakeasies in NYC."
+	"Speakeasy lover in NYC. Always seen in Angel's Share, PDT and Bathtub Gin."
 ];
 
 /* Social network */
