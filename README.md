@@ -12,7 +12,7 @@ be out of date. I am going to update it asap.
 
 Next steps: 
 
-- ~~Project field would be divided into three parts: Java, Web and Mobile~~ I just don't have enough projects of my own. I'm giving it up for now.
+- ~~Project field would be divided into three parts: Java, Web and Mobile~~ I just ~~don't have enough~~have too many projects of my own now. I'm giving it up for now.
 - Make it a blog... probably.
 
 This page is always underconstruction.
