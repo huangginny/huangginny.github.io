@@ -46,4 +46,6 @@ export default [
 	{ text: 'harry potter trivia', value: 30 },
 	{ text: 'lisp', value: 25 },
 	{ text: 'client support', value: 40 },
+	{ text: 'centos web panel', value: 35 },
+	{ text: 'linux', value: 65 },
 ];

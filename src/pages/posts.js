@@ -3,8 +3,9 @@ import { Link, graphql } from "gatsby"
 import { Box, Divider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import deepOrange from '@material-ui/core/colors/deepOrange';
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Disclaimer from "../components/Disclaimer";
 
 const useStyles = makeStyles({
 	title: {
@@ -20,7 +21,7 @@ const Post = ({slug, title, frontmatter, date, excerpt}) => {
 	const classes = useStyles();
 	return <Box mt={4}>
 		<h3><Link to={slug} className={classes.title}>{title}{" "}</Link></h3>
-		<Box mt={0.8} mb={2.5} color='gray'>{ date }</Box>
+		<Box mt={0.8} mb={2.5} color='gray'>{ date.toLowerCase() }</Box>
 		<p>{ excerpt }</p>
 		<Link to={slug}>read more ></Link>
 		<Box mt={3}><Divider /></Box>
@@ -40,6 +41,7 @@ const Posts = ({data}) => (
 			excerpt={ node.excerpt } 
 		/>
 	))}
+	<Disclaimer />
   </Layout>
 );
 

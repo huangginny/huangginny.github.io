@@ -20,7 +20,7 @@ const IndexPage = ({data}) => (
 export const query = graphql`
 	query {
 		allMarkdownRemark(
-			limit: 5,
+			limit: 3,
 		 	sort: {
 				fields: [frontmatter___date]
 				order: DESC

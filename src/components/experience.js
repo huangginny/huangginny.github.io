@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid, Paper, Hidden, Divider } from '@material-ui/core';
+import { Box, Grid, Paper, Hidden } from '@material-ui/core';
 import { 
 	Timeline,
 	TimelineItem,
@@ -17,7 +17,10 @@ const useStylesEntry = makeStyles((theme) => ({
 	timelineDot: { borderColor: deepOrange[300] },
 	timelinePaper: { zIndex: 1, opacity: 0.92 },
 	title: { margin: '0.5rem 0' },
-	description: { margin: '0.5rem 0' }
+	description: { 
+		margin: '0.3rem 0',
+		fontSize: '0.7rem'
+	}
 }));
 const useStylesExperience = makeStyles((theme) => ({
 	wrapper: { position: 'relative' },
@@ -26,7 +29,7 @@ const useStylesExperience = makeStyles((theme) => ({
 		position: 'absolute',
 		float: 'right',
 		right: '60px',
-		top: '360px',
+		top: '300px',
 		zIndex: -3
 	}
 }));
@@ -47,13 +50,7 @@ const Entry = ({ title, name, time, place, children }) => {
 					<h4 className={classes.title}>{ title }</h4>
 					<Box color={deepOrange[600]}>{ name }</Box>
 					<Box><i>{ place }</i></Box>
-					{ !!children ? 
-						<div className={classes.description}>
-							<Divider />
-							<Box pt={1}>{ children }</Box>
-						</div> 
-						: null 
-					}
+					{ !!children ? <Box pt={1} className={classes.description}>{ children }</Box> : null }
 				</Box>
 			</Paper>
 		</TimelineContent>

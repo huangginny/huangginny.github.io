@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
 import deepOrange from '@material-ui/core/colors/deepOrange';
 import lime from '@material-ui/core/colors/lime';
+import SocialNetwork from './socialnetwork';
 import "./layout.css";
 
 const drawerWidth = 300;
@@ -75,6 +76,9 @@ const useStyles = makeStyles((theme) => ({
 		bottom: '1rem',
 	    position: 'absolute',
 	    width: '100%',
+	    '& div': {
+	    	paddingTop: '0.8rem'
+	    }
 	}
 }));
 
@@ -116,9 +120,12 @@ function Layout({ children, window }) {
 				<LinkListItem text='posts' link='/posts/' className={classes.link} />
 			</List>
 			<footer className={classes.footer}>
-				© ginny huang {new Date().getFullYear()}, built with
-				{` `}
-				<a href="https://www.gatsbyjs.com">gatsby</a>
+				<SocialNetwork />
+				<div>
+					© ginny huang {new Date().getFullYear()}, built with
+					{` `}
+					<a href="https://www.gatsbyjs.com">gatsby</a>
+				</div>
 			</footer>
 		</div>
 	);

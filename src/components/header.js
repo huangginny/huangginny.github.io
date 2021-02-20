@@ -24,7 +24,7 @@ const Header = ({ siteTitle }) => {
 				<h1 className={classes.name}><Highlight>ginny h</Highlight>uang</h1>
 			</div>
 			<p><h4 style={{display: 'inline-block'}}>aka <Highlight>ginster</Highlight></h4> -- 
-				thanks to one of my favorite coworkers, cat, for giving me this nickname 🐱
+				thanks to one of my favorite coworkers, cat, for giving me this nickname <span role='img' aria-label='cat'>🐱</span>
 			</p>
 			<br/>
 			<p>born and raised in shenzhen, china. currently lives in <Highlight>washington, dc.</Highlight></p>

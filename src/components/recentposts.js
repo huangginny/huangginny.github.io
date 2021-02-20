@@ -34,8 +34,6 @@ const useStyles = makeStyles((theme) => ({
 	linkToPost: { paddingTop: '1rem' }
 }));
 
-const NUM_OF_RECENT_POSTS = 5;
-
 const Post = ({ data, classes }) => (
 	<Box className={classes.postWrapper}>
 		<Box className={classes.postContent}>
@@ -51,7 +49,7 @@ const RecentPosts = ({ posts, totalCount }) => {
 	return <Box mt={3}>
 		<h3>recent posts</h3>
 		<Grid container direction='column' className={classes.gridcontainer}>
-		{ posts.slice(0, NUM_OF_RECENT_POSTS).map(
+		{ posts.map(
 			({ node }) => <Grid item xs={12} key={node.id}><Post data={node} classes={classes} /></Grid>
 		) }
 		</Grid>
