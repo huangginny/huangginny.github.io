@@ -31,8 +31,8 @@ const SkillRating = ({ label, value }) => (
 	</Box>
 );
 
-const Skills = () => (
-	<Box mt={3}>
+const Skills = ({mt}) => (
+	<Box mt={mt}>
 		<h3>skills</h3>
 		<Grid container direction='row-reverse' spacing={3} alignItems='flex-start'>
 			<Grid item xs={12} sm={4}>

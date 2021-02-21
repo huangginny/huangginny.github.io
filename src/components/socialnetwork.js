@@ -1,8 +1,7 @@
 import React from "react";
 import { Box, IconButton } from '@material-ui/core';
 import { Twitter, LinkedIn, GitHub } from '@material-ui/icons';
-import { makeStyles } from '@material-ui/core/styles';
-import lime from '@material-ui/core/colors/lime';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const myAccounts = [
 	{ key: 'twitter', icon: <Twitter />, link: 'https://twitter.com/ginsterrific'},
@@ -10,13 +9,14 @@ const myAccounts = [
 	{ key: 'github', icon: <GitHub />, link: 'https://github.com/huangginny'}
 ];
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 	alignCenter: { textAlign: 'center', paddingBottom: '0.7rem', color: 'darkgray' },
-	account: { '&:hover': { color: lime[800] }}
-});
+	account: { '&:hover': { color: theme.palette.primary.main }}
+}));
 
 const SocialNetwork = () => {
-	const classes = useStyles();
+	const theme = useTheme();
+	const classes = useStyles(theme);
 	return <Box>
 		<Box className={classes.alignCenter}>- - - - - - - - - - - - - - - - - - -</Box>
 		{ myAccounts.map(({key, icon, link}) => (
@@ -27,7 +27,6 @@ const SocialNetwork = () => {
 				component='a'
 				href={link}
 				target='_blank'
-
 			>{ icon }</IconButton>
 		))}
 	</Box>

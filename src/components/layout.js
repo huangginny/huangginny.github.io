@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from "gatsby";
+import { ThemeProvider } from '@material-ui/styles';
 import Img from "gatsby-image";
 import {
 	AppBar, Toolbar, CssBaseline, Divider, Drawer, Hidden, 
 	IconButton, List, ListItem, ListItemText, Box 
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import { makeStyles } from '@material-ui/core/styles';
+import { useTheme, makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import deepOrange from '@material-ui/core/colors/deepOrange';
 import lime from '@material-ui/core/colors/lime';
 import SocialNetwork from './socialnetwork';
@@ -15,19 +16,26 @@ import "./layout.css";
 
 const drawerWidth = 300;
 
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: lime[800] },
+    secondary: { main: deepOrange[500] },
+  },
+});
+
 const useStyles = makeStyles((theme) => ({
 	root: { // Grid container
 		display: 'flex',
 	},
 	drawer: {
 		fontSize: '1.1rem',
-		[theme.breakpoints.up('sm')]: {
+		[theme.breakpoints.up('md')]: {
 			width: drawerWidth,
 			flexShrink: 0,
 		},
 	},
 	appBar: {
-		[theme.breakpoints.up('sm')]: {
+		[theme.breakpoints.up('md')]: {
 			width: `calc(100% - ${drawerWidth}px)`,
 			marginLeft: drawerWidth,
 		},
@@ -41,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	menuButton: {
 		marginRight: theme.spacing(3),
-		[theme.breakpoints.up('sm')]: {
+		[theme.breakpoints.up('md')]: {
 			display: 'none',
 		},
 	},
@@ -60,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: 'center',
 		'&:hover': {
 			boxShadow: 'none',
-			color: lime[900]
+			color: theme.palette.primary.main
 		}
 	},
 	content: {
@@ -89,7 +97,8 @@ const LinkListItem = ({text, link, className}) => (
 );
 
 function Layout({ children, window }) {
-	const classes = useStyles();
+	const t = useTheme();
+	const classes = useStyles(t);
 
 	const faviconImg = useStaticQuery(graphql`
 	    query {
@@ -133,9 +142,10 @@ function Layout({ children, window }) {
 	const container = window !== undefined ? () => window().document.body : undefined;
 
 	return (
+		//<ThemeProvider theme={theme}>
 		<div className={classes.root}>
 			<CssBaseline />
-			<Hidden smUp>
+			<Hidden mdUp>
 				<AppBar position="fixed" className={classes.appBar}>
 					<Toolbar>
 						<IconButton
@@ -160,7 +170,7 @@ function Layout({ children, window }) {
 			</Hidden>
 			<nav className={classes.drawer} aria-label="mailbox folders">
 				{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-				<Hidden smUp implementation="css">
+				<Hidden mdUp implementation="css">
 					<Drawer
 						container={container}
 						variant="temporary"
@@ -177,7 +187,7 @@ function Layout({ children, window }) {
 						{drawer}
 					</Drawer>
 				</Hidden>
-				<Hidden xsDown implementation="css">
+				<Hidden smDown implementation="css">
 					<Drawer
 						classes={{
 							paper: classes.drawerPaper,
@@ -190,10 +200,11 @@ function Layout({ children, window }) {
 				</Hidden>
 			</nav>
 			<main className={classes.content}>
-				<Hidden smUp><Box height={60}/></Hidden>
+				<Hidden mdUp><Box height={60}/></Hidden>
 				{ children }
 			</main>
 		</div>
+		//</ThemeProvider>
 	);
 }
 
@@ -205,4 +216,6 @@ Layout.propTypes = {
 	window: PropTypes.func,
 };
 
-export default Layout;
+export default ({children, window}) => <ThemeProvider theme={theme}>
+	<Layout window={window}>{ children }</Layout>
+</ThemeProvider>;

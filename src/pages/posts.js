@@ -1,24 +1,24 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { Box, Divider } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import deepOrange from '@material-ui/core/colors/deepOrange';
+import { useTheme, makeStyles } from '@material-ui/core/styles';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Disclaimer from "../components/Disclaimer";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
 	title: {
 		fontWeight: 'bold',
 		color: 'hsla(0, 0%, 0%, 0.9)',
 		'&:hover': {
-			borderBottom: `2px solid ${deepOrange[500]}`,
+			borderBottom: `2px solid ${theme.palette.secondary.main}`,
 			boxShadow: 'none'
 		}
 	}
-});
+}));
 const Post = ({slug, title, frontmatter, date, excerpt}) => {
-	const classes = useStyles();
+	const theme = useTheme();
+	const classes = useStyles(theme);
 	return <Box mt={4}>
 		<h3><Link to={slug} className={classes.title}>{title}{" "}</Link></h3>
 		<Box mt={0.8} mb={2.5} color='gray'>{ date.toLowerCase() }</Box>
@@ -41,7 +41,7 @@ const Posts = ({data}) => (
 			excerpt={ node.excerpt } 
 		/>
 	))}
-	<Disclaimer />
+	<Disclaimer py={3} />
   </Layout>
 );
 

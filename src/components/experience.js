@@ -10,19 +10,17 @@ import {
 	TimelineOppositeContent,
 	TimelineDot
 } from '@material-ui/lab';
-import deepOrange from '@material-ui/core/colors/deepOrange';
 
-const useStylesEntry = makeStyles((theme) => ({
+const useStylesEntry = makeStyles({
 	timelineOppositeContent: { flex: 0.2, paddingLeft: 0 },
-	timelineDot: { borderColor: deepOrange[300] },
 	timelinePaper: { zIndex: 1, opacity: 0.92 },
 	title: { margin: '0.5rem 0' },
 	description: { 
 		margin: '0.3rem 0',
 		fontSize: '0.7rem'
 	}
-}));
-const useStylesExperience = makeStyles((theme) => ({
+});
+const useStylesExperience = makeStyles({
 	wrapper: { position: 'relative' },
 	timeline: { margin: 0 },
 	backgroundImage: { 
@@ -32,7 +30,7 @@ const useStylesExperience = makeStyles((theme) => ({
 		top: '300px',
 		zIndex: -3
 	}
-}));
+});
 
 const Entry = ({ title, name, time, place, children }) => {
 	const classes = useStylesEntry();
@@ -41,14 +39,14 @@ const Entry = ({ title, name, time, place, children }) => {
 			<Box>{ time }</Box>
 		</TimelineOppositeContent>
 		<TimelineSeparator>
-			<TimelineDot variant="outlined" className={classes.timelineDot} />
+			<TimelineDot variant="outlined" color='secondary' />
 			<TimelineConnector />
 		</TimelineSeparator>
 		<TimelineContent>
 			<Paper className={classes.timelinePaper}>
 				<Box p={2}>
 					<h4 className={classes.title}>{ title }</h4>
-					<Box color={deepOrange[600]}>{ name }</Box>
+					<Box color='secondary.main'>{ name }</Box>
 					<Box><i>{ place }</i></Box>
 					{ !!children ? <Box pt={1} className={classes.description}>{ children }</Box> : null }
 				</Box>
@@ -57,11 +55,11 @@ const Entry = ({ title, name, time, place, children }) => {
 	</TimelineItem>;
 };
 
-const Experience = () => {
+const Experience = ({mt}) => {
 	const classes = useStylesExperience();
-	return <Box mt={3} className={classes.wrapper} >
+	return <Box mt={mt} className={classes.wrapper} >
 		<Grid container mt={3}>
-			<Grid item xs={12} md={6}>
+			<Grid item xs={12} sm={6}>
 				<h3>work history</h3>
 				<Timeline className={classes.timeline}>
 					<Entry
@@ -86,7 +84,7 @@ const Experience = () => {
 						&nbsp;for academic researchers </Entry>
 				</Timeline>
 			</Grid>
-			<Grid item xs={12} md={6}>
+			<Grid item xs={12} sm={6}>
 				<h3>education</h3>
 				<Timeline className={classes.timeline}>
 					<Entry

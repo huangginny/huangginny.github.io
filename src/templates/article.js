@@ -1,11 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Divider from '@material-ui/core/Divider';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Disclaimer from "../components/Disclaimer";
+import Paginator from "../components/Paginator";
 
-export default function Article({ data }) {
+export default function Article({ data, pageContext }) {
 	const post = data.markdownRemark;
 	return (
 		<Layout>
@@ -14,8 +14,13 @@ export default function Article({ data }) {
 				<h1>{post.frontmatter.title}</h1>
 				<p style={{color: 'grey'}}>{post.frontmatter.date.toLowerCase()}</p>
 			<div dangerouslySetInnerHTML={{ __html: post.html }} /></div>
-			<Divider />
-			<Disclaimer />
+			<Paginator
+				prev={ pageContext.prev }
+				next={ pageContext.next } 
+				pt={3}
+				pb={4}
+			/>
+			<Disclaimer py={3} />
 		</Layout>
 	);
 };

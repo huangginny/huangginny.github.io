@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Box, Grid, Hidden } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import deepOrange from '@material-ui/core/colors/deepOrange';
+import { useTheme, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 	gridcontainer: { marginTop: '1.5rem' },
@@ -18,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	postTitle: {
 		fontWeight: 'bold',
-		color: deepOrange[500],
+		color: theme.palette.secondary.main,
 		textDecoration: 'none',
 		"&:hover": {
 			color: '#827717'
@@ -44,9 +43,10 @@ const Post = ({ data, classes }) => (
 	</Box>
 );
 
-const RecentPosts = ({ posts, totalCount }) => {
-	const classes = useStyles();
-	return <Box mt={3}>
+const RecentPosts = ({ mt, posts, totalCount }) => {
+	const theme = useTheme()
+	const classes = useStyles(theme);
+	return <Box mt={mt}>
 		<h3>recent posts</h3>
 		<Grid container direction='column' className={classes.gridcontainer}>
 		{ posts.map(

@@ -24,18 +24,37 @@ exports.createPages = async ({ graphql, actions }) => {
 	const { createPage } = actions;
 	const result = await graphql(`
 		query {
-			allMarkdownRemark {
+			allMarkdownRemark(sort: {
+				fields: [frontmatter___date]
+				order: DESC
+			}) {
 				edges {
 					node {
 						fields {
 							slug
 						}
 					}
+					previous {
+						fields {
+							slug
+						}
+						frontmatter {
+							title
+						}
+					}
+					next {
+						fields {
+							slug
+						}
+						frontmatter {
+							title
+						}
+					}
 				}
 			}
 		}
   	`);
-	result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+	result.data.allMarkdownRemark.edges.forEach(({ node, previous, next }) => {
   		createPage({
 	  		path: node.fields.slug,
 	  		component: path.resolve(`./src/templates/article.js`),
@@ -43,6 +62,8 @@ exports.createPages = async ({ graphql, actions }) => {
 				// Data passed to context is available
 				// in page queries as GraphQL variables.
 				slug: node.fields.slug,
+				prev: !!previous ? { slug: previous.fields.slug, title: previous.frontmatter.title } : null,
+				next: !!next ? { slug: next.fields.slug, title: next.frontmatter.title } : null
 			},
 		});
 	});

@@ -3,7 +3,6 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import Box from '@material-ui/core/Box';
-import deepOrange from '@material-ui/core/colors/deepOrange';
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -35,7 +34,7 @@ const Avatar = (props) => {
   return (
     <Box 
       border={2}
-      borderColor={deepOrange[500]}
+      borderColor='secondary.main'
       borderRadius="50%"
       width={250}
       height={250}
