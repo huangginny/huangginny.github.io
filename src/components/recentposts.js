@@ -39,7 +39,7 @@ const Post = ({ data, classes }) => (
 			<Link to={ data.fields.slug } className={classes.postTitle}>{ data.frontmatter.title }</Link>
 			<Hidden xsDown>&nbsp;·&nbsp;<span>{ data.excerpt }</span></Hidden>
 		</Box>
-		<span className={classes.postDate}>{ data.frontmatter.date }</span>
+		<span className={classes.postDate}>{ data.frontmatter.date.toLowerCase() }</span>
 	</Box>
 );
 

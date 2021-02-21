@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 			width: `calc(100% - ${drawerWidth}px)`,
 			marginLeft: drawerWidth,
 		},
+		color: 'white',
 		backgroundColor: deepOrange[400]
 	},
 	logoContainer: {
