@@ -483,6 +483,3 @@ pre tt:after {
   color: white;
   background-color: #FF5722;
 }
-
-/* OVERRIDE MATERIAL-UI ALL CAPS BUTTON */
-.MuiButton-root { text-transform: lowercase; }

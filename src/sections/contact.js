@@ -144,6 +144,7 @@ class ContactForm extends React.Component {
 							type='submit'
 							disabled={ !(this.state.name && this.state.email && this.state.message) }
 							color='secondary'
+							style={{textTransform: 'lowercase'}}
 						>
 								send me a message
 						</Button>

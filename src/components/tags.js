@@ -48,4 +48,5 @@ export default [
 	{ text: 'client support', value: 40 },
 	{ text: 'centos web panel', value: 35 },
 	{ text: 'linux', value: 65 },
+	{ text: 'photoshop', value: 50 },
 ];
