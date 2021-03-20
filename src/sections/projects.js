@@ -47,11 +47,11 @@ const Dionysus = () => (
 		<Grid item xs={12} md={6}>
 			<p>
 				Dionysus was an app developed and published in early 2020 using SwiftUI.
-				It stems from my own need to rate a restaurant using a weighted average of FourSquare,
-				Yelp and DianPing ratings to determine whether it worths my time.
+				It stemed from my own need to rate a restaurant using a weighted average of FourSquare,
+				Yelp and DianPing ratings to determine whether it would worth my time.
 			</p>
-			<p> This app helps users check restaurant ratings from different platforms all in one piece,
-				so you only need to open one app instead of three.
+			<p> This app helps users check restaurant ratings from different platforms in one piece,
+				so you only need to open one app instead of three <span role='img' aria-label='tada'>🎉</span>
 			</p>
 			<p>
 				Check this video for realtime usage of the app. You can also find more information on the app store.
@@ -103,18 +103,18 @@ const Dionysus = () => (
 
 const Wireless = () => (
 	<Box>
-		<img src='/images/ww-screenshot.png' />
+		<img src='/images/ww-screenshot.png' alt='Wizarding Wireless' />
 		<p>
-			I teamed up with two other diehard Potterheads who I've known since teenage years on the former
+			I teamed up with two other diehard Potterheads who I had known since teenage years on the former
 			hoolee8.com, a Chinese Harry Potter community in the form of a BBS.
 		</p>
 		<p>
-			While the other two will be in charge of the content and distribution, I designed the logo, implemented
-			UI (coded a new WordPress theme from scratch and hated php ever since,) deployed it to a VPS, and made
-			sure that users in China are able to access through the "Great Firewall" with little latency.
+			While the other two took charge of the content, distribution and social media activities, I designed the logo,
+			implemented the UI (coded a new WordPress theme from scratch and hated php ever since,) deployed it to a VPS,
+			and made sure that users in China were able to access through the "Great Firewall" with little latency.
 		</p>
 		<p>
-			We haven't officially started adding content and release it to the public yet <span role="img">🤫</span>
+			We haven't officially started adding content or releasing it to the public yet <span role="img" aria-label='sh'>🤫</span>
 			but yeah, you get the gist.
 		</p>
 		<BottomButton

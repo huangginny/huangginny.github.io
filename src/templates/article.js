@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { makeStyles } from '@material-ui/core/styles';
 import TodayIcon from '@material-ui/icons/Today';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
+import { Disqus } from 'gatsby-plugin-disqus';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Disclaimer from "../components/Disclaimer";
@@ -20,6 +21,12 @@ export default function Article({ data, pageContext }) {
 	const classes = useStyles();
 
 	const post = data.markdownRemark;
+	const disqusConfig = {
+		url: `https://ginsterrific.com${pageContext.slug}`,
+		identifier: post.id,
+		title: post.frontmatter.title,
+	};
+
 	return (
 		<Layout>
 			<SEO title={post.frontmatter.title} />
@@ -39,6 +46,7 @@ export default function Article({ data, pageContext }) {
 				pb={4}
 			/>
 			<Disclaimer py={3} />
+			<Disqus config={disqusConfig} />
 		</Layout>
 	);
 };
@@ -46,6 +54,7 @@ export default function Article({ data, pageContext }) {
 export const query = graphql`
 	query($slug: String!) {
 		markdownRemark(fields: { slug: { eq: $slug } }) {
+			id
 			html
 			timeToRead
 			frontmatter {
