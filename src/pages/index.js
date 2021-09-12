@@ -10,17 +10,33 @@ import RecentPosts from "../sections/recentposts";
 import Contact from "../sections/contact";
 import Projects from "../sections/projects"
 
-const IndexPage = ({data}) => (
-	<Layout>
+const isFirstHomePageVisit = () => {
+	if (typeof window === 'undefined') {
+		return false;
+	}
+	const val = window.localStorage.getItem('ginsterrific');
+	const today = new Date().toDateString();
+	if (!val || val !== today) {
+		window.localStorage.setItem('ginsterrific', today);
+		return true;
+	}
+	return false;
+};
+
+
+
+const IndexPage = ({data}) => {
+	const firstHomepageVisit = isFirstHomePageVisit();
+	return <Layout firstHomepageVisit={firstHomepageVisit}>
 		<SEO title='home' />
 		<Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-		<Skills mt={3} />
+		<Skills mt={3} firstHomepageVisit={firstHomepageVisit} />
 		<Hidden smUp><Experience mt={2} /></Hidden>
 		<Projects mt={3}/>
 		<RecentPosts mt={3} posts={data.allMarkdownRemark.edges} totalCount={ data.allMarkdownRemark.totalCount } />
 		<Contact mt={5} />
 	</Layout>
-);
+};
 
 export const query = graphql`
 	query {

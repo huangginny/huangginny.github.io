@@ -6,13 +6,15 @@ import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
 import tags from '../components/tags';
 
-const options = {
+const getOptions = (firstHomepageVisit) => ({
+  deterministic: true,
+  randomSeed: new Date().toDateString(),
   enableTooltip: false,
   fontSizes: [10, 70],
   padding: 1,
   rotations: 3,
-  transitionDuration: 1000
-};
+  transitionDuration: firstHomepageVisit ? 1500 : 0
+});
 
 const SkillRating = ({ label, value }) => (
 	<Grid item xs={12} sm={6} lg={3}>
@@ -28,10 +30,11 @@ const SkillRating = ({ label, value }) => (
 	</Grid>
 );
 
-const Skills = ({mt}) => (
-	<Box mt={mt}>
+const Skills = ({mt, firstHomepageVisit}) => {
+	console.log(firstHomepageVisit);
+	return <Box mt={mt}>
 		<Box height='400px'>
-			<ReactWordcloud words={tags} options={options} />
+			<ReactWordcloud words={tags} options={getOptions(firstHomepageVisit)} />
 		</Box>
 		<Grid container spacing={2}>
 			<SkillRating label='web development' value={5} />
@@ -40,6 +43,6 @@ const Skills = ({mt}) => (
 			<SkillRating label='python' value={5} />
 		</Grid>
 	</Box>
-);
+};
 
 export default Skills;

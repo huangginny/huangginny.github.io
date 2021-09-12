@@ -32,9 +32,15 @@ const Experience = ({mt}) => {
 		<Hidden smUp><h3>experience</h3></Hidden>
 		<List disablePadding className={classes.education} >
 			<Entry
+				name='google'
+				title='software engineer'
+				time='since 2021'
+				place='washington, dc'
+			/>
+			<Entry
 				name='us news and world report'
 				title='senior software developer'
-				time='since 2020'
+				time='2020~2021'
 				place='washington, dc'
 			/>
 			<Entry

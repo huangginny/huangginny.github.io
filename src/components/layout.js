@@ -5,7 +5,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import Img from "gatsby-image";
 import {
 	AppBar, Toolbar, CssBaseline, Divider, Drawer, Hidden, 
-	IconButton, List, ListItem, ListItemText, Box 
+	IconButton, List, ListItem, ListItemText, Box, Slide 
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useTheme, makeStyles, createMuiTheme } from '@material-ui/core/styles';
@@ -97,7 +97,7 @@ const LinkListItem = ({text, link, className}) => (
 	</ListItem>
 );
 
-function Layout({ children, window }) {
+function Layout({ firstHomepageVisit, children, window }) {
 	const t = useTheme();
 	const classes = useStyles(t);
 
@@ -141,9 +141,41 @@ function Layout({ children, window }) {
 	);
 
 	const container = window !== undefined ? () => window().document.body : undefined;
+	const nav = (
+		<nav className={classes.drawer} aria-label="mailbox folders">
+			{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+			<Hidden mdUp implementation="css">
+				<Drawer
+					container={container}
+					variant="temporary"
+					anchor="left"
+					open={mobileOpen}
+					onClose={handleDrawerToggle}
+					classes={{
+						paper: classes.drawerPaper,
+					}}
+					ModalProps={{
+						keepMounted: true, // Better open performance on mobile.
+					}}
+				>
+					{drawer}
+				</Drawer>
+			</Hidden>
+			<Hidden smDown implementation="css">
+				<Drawer
+					classes={{
+						paper: classes.drawerPaper,
+					}}
+					variant="permanent"
+					open
+				>
+					{drawer}
+				</Drawer>
+			</Hidden>
+		</nav>
+	);
 
 	return (
-		//<ThemeProvider theme={theme}>
 		<div className={classes.root}>
 			<CssBaseline />
 			<Hidden mdUp>
@@ -169,43 +201,14 @@ function Layout({ children, window }) {
 					</Toolbar>
 				</AppBar>
 			</Hidden>
-			<nav className={classes.drawer} aria-label="mailbox folders">
-				{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-				<Hidden mdUp implementation="css">
-					<Drawer
-						container={container}
-						variant="temporary"
-						anchor="left"
-						open={mobileOpen}
-						onClose={handleDrawerToggle}
-						classes={{
-							paper: classes.drawerPaper,
-						}}
-						ModalProps={{
-							keepMounted: true, // Better open performance on mobile.
-						}}
-					>
-						{drawer}
-					</Drawer>
-				</Hidden>
-				<Hidden smDown implementation="css">
-					<Drawer
-						classes={{
-							paper: classes.drawerPaper,
-						}}
-						variant="permanent"
-						open
-					>
-						{drawer}
-					</Drawer>
-				</Hidden>
-			</nav>
+			{ !firstHomepageVisit ? nav : 
+				<Slide direction="right" in timeout={1500} mountOnEnter unmountOnExit>{ nav }</Slide> 
+			}
 			<main className={classes.content}>
 				<Hidden mdUp><Box height={60}/></Hidden>
 				{ children }
 			</main>
 		</div>
-		//</ThemeProvider>
 	);
 }
 
@@ -217,6 +220,6 @@ Layout.propTypes = {
 	window: PropTypes.func,
 };
 
-export default ({children, window}) => <ThemeProvider theme={theme}>
-	<Layout window={window}>{ children }</Layout>
+export default ({firstHomepageVisit, children, window}) => <ThemeProvider theme={theme}>
+	<Layout window={window} firstHomepageVisit={firstHomepageVisit}>{ children }</Layout>
 </ThemeProvider>;
