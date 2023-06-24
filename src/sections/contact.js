@@ -171,10 +171,6 @@ const Contact = ({mt}) => {
 						<ContactMap
 							centerPosition={[38.89789339749001, -77.03652979993382]} // white house
 							markerPosition={[38.898546728657266, -77.01013157999715]} // google
-							locationText={
-								<span>somewhere near georgetown cupcakes.<br/>
-								actually i'm not here now but i'll be back after covid</span>
-							}
 						/>
 					</Grid>
 					<Grid item xs={12} md={8}>
